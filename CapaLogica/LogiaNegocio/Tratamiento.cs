@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica
+namespace CapaLogica.LogiaNegocio
 {
-    public class Class1
+    internal class Tratamiento
     {
     }
 }
