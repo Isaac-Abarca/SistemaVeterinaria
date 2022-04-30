@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using SistemaVeterinaria.CapaConexion;
 using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
-namespace CapaLogica.Servicios
+namespace SistemaVeterinaria.CapaLogica.Servicios
 {
-    internal class ServicioTratamiento : servicio, IDisposable
+    public class ServicioTratamiento : servicio, IDisposable
     {
 
         private SqlCommand comando;
@@ -32,6 +32,9 @@ namespace CapaLogica.Servicios
             Console.WriteLine("GESTOR INSERTAR Tratamiento");
 
             comando.CommandText ="InsertarTratamiento";
+
+            comando.Parameters.Add("Medicamento_id", SqlDbType.Int);
+            comando.Parameters["Medicamento_id"].Value = tratamiento.Medicamento_id;
 
             comando.Parameters.Add("Tratamiento_dosis", SqlDbType.Float);
             comando.Parameters["Tratamiento_dosis"].Value = tratamiento.Tratamiento_dosis;
@@ -76,7 +79,7 @@ namespace CapaLogica.Servicios
             return respuesta;
         }
 
-        public DataSet ConsultarMedicamento(int Tratamiento_id)
+        public DataSet ConsultaTratamiento(int Tratamiento_id)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Consultar TRATAMIENTO");
@@ -94,7 +97,7 @@ namespace CapaLogica.Servicios
 
         }
 
-        public DataTable ListarMedicamentos()
+        public DataTable ListarTratamiento()
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar TRATAMIENTO");
