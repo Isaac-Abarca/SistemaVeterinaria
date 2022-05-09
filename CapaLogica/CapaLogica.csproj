@@ -77,14 +77,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LogiaNegocio\Cita.cs" />
+    <Compile Include="LogiaNegocio\Duenno.cs" />
+    <Compile Include="LogiaNegocio\Especie.cs" />
     <Compile Include="LogiaNegocio\Expediente.cs" />
+    <Compile Include="LogiaNegocio\Mascota.cs" />
     <Compile Include="LogiaNegocio\Medicamento.cs" />
     <Compile Include="LogiaNegocio\Tratamiento.cs" />
+    <Compile Include="LogiaNegocio\Usuario.cs" />
     <Compile Include="LogiaNegocio\Veterinario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\ServicioCita.cs" />
+    <Compile Include="Servicios\ServicioDuenno.cs" />
+    <Compile Include="Servicios\ServicioEspecie.cs" />
+    <Compile Include="Servicios\ServicioExpediente.cs" />
+    <Compile Include="Servicios\ServicioMascota.cs" />
     <Compile Include="Servicios\ServicioMedicamento.cs" />
     <Compile Include="Servicios\ServicioTratamiento.cs" />
+    <Compile Include="Servicios\ServicioUsuario.cs" />
     <Compile Include="Servicios\ServicioVeterinario.cs" />
   </ItemGroup>
   <ItemGroup>

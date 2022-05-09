@@ -11,7 +11,7 @@ namespace SistemaVeterinaria.CapaLogica.LogiaNegocio
     {
         #region ATRIBUTOS
 
-        protected int veterinario_id;
+        protected int    veterinario_id;
         protected string veterinario_cedula;
         protected string veterinario_nombre;
         protected string veterinario_telefono;

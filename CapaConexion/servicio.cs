@@ -10,14 +10,14 @@ namespace SistemaVeterinaria.CapaConexion
 
         public servicio()
         {
-            conexion = new SqlConnection(@"user=DESKTOP-SHJTAP0\UCR;password= validpassword;server = DESKTOP-SHJTAP0;Trusted_Connection =yes;database = SistemaVeterinaria");
-            /**
-            conexion = new SqlConnection( @"user=MAMALONA\\abarc; 
+           //conexion = new SqlConnection(@"user=DESKTOP-SHJTAP0\UCR;password= validpassword;server = DESKTOP-SHJTAP0;Trusted_Connection =yes;database = SistemaVeterinaria");
+           
+            conexion = new SqlConnection(@"user=MAMALONA\\abarc; 
                                            password= validpassword;
                                            server = MAMALONA;
                                            Trusted_Connection = yes;
-                                           database = Practica");
-            */
+                                           database = Sistema_veterinaria");
+            
         }
 
         protected void cerrarConexion()

@@ -10,7 +10,7 @@ using CapaLogica.LogiaNegocio;
 using SistemaVeterinaria.CapaConexion;
 using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
-namespace CapaLogica.Servicios
+namespace SistemaVeterinaria.CapaLogica.Servicios
 {
     internal class ServicioCita : servicio, IDisposable
     {

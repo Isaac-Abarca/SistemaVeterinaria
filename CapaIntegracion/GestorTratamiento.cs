@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +22,7 @@ namespace SistemaVeterinaria.CapaIntegracion
         }
 
         public string insertarTratamiento(int medicamento_id,
-                                            float tratamiento_dosis,
+                                            string tratamiento_dosis,
                                            string tratamiento_observaciones,
                                            string tratamiento_estado)
         {
@@ -40,5 +40,17 @@ namespace SistemaVeterinaria.CapaIntegracion
                 return elTratamiento.ListarTratamiento();
         }
 
+
+        public DataSet consultaTratamientos(int Tratamiento_id)
+        {
+            using (ServicioTratamiento elTratamiento = new ServicioTratamiento())
+                return elTratamiento.ConsultaTratamiento(Tratamiento_id);
+        }
+
+        public string modificarTratamientos(Tratamiento tratamiento)
+        {
+            using (ServicioTratamiento elTratamiento = new ServicioTratamiento())
+                return elTratamiento.modificarTratamiento(tratamiento);
+        }
     }
 }

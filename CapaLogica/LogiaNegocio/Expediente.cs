@@ -11,11 +11,11 @@ namespace SistemaVeterinaria.CapaLogica.LogiaNegocio
     {
 
         #region ATRIBUTOS
-        protected int Expediente_id;
-        protected int Mascota_id;
-        protected int Veterinario_id;
-        protected int Tratamiento_id;
-        protected Date Expediente_fecha;
+        protected int    Expediente_id;
+        protected int    Mascota_id;
+        protected int    Veterinario_id;
+        protected int    Tratamiento_id;
+        protected Date   Expediente_fecha;
         protected string Expediente_estado;
         #endregion
 

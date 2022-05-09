@@ -88,6 +88,10 @@
       <Project>{5CA3158F-51EC-4759-84C8-A86320E3FAC2}</Project>
       <Name>CapaConexion</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{D0D6540D-1C14-4E04-AE10-507168AC02F4}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

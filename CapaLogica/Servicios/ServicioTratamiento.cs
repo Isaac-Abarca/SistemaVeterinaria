@@ -62,6 +62,9 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Tratamiento_id", SqlDbType.Int);
             comando.Parameters["Tratamiento_id"].Value = tratamiento.Tratamiento_id;
 
+            comando.Parameters.Add("Medicamento_id", SqlDbType.Int);
+            comando.Parameters["Medicamento_id"].Value = tratamiento.Medicamento_id;
+
             comando.Parameters.Add("Tratamiento_dosis", SqlDbType.Float);
             comando.Parameters["Tratamiento_dosis"].Value = tratamiento.Tratamiento_dosis;
 
@@ -102,7 +105,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar TRATAMIENTO");
 
-            comando.CommandText ="ListarTratamiento";
+            comando.CommandText ="ListarTratamientos";
 
             DataSet medicamento = new DataSet();
 
