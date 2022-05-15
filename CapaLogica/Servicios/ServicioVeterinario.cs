@@ -11,7 +11,7 @@ using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
 namespace CapaLogica.Servicios
 {
-    internal class ServicioVeterinario : servicio, IDisposable
+    public class ServicioVeterinario : servicio, IDisposable
     {
 
         private SqlCommand comando;
@@ -106,7 +106,7 @@ namespace CapaLogica.Servicios
 
         }
 
-        public DataTable ListarMedicamentos()
+        public DataTable ListarVeterinario()
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar Veterinario");

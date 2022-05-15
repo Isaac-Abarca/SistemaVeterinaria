@@ -13,7 +13,7 @@ using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
 namespace SistemaVeterinaria.CapaLogica.Servicios
 {
-    internal class ServicioUsuario : servicio, IDisposable
+    public class ServicioUsuario : servicio, IDisposable
     {
 
         private SqlCommand comando;
@@ -28,7 +28,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando = new SqlCommand();
         }
 
-        public string insetarCita(Usuario usuario)
+        public string insetarUsuario(Usuario usuario)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR INSERTAR Usuario");
@@ -54,7 +54,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public string modificarCita(Usuario usuario)
+        public string modificarUsuario(Usuario usuario)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR MODIFICAR usuario");
@@ -84,7 +84,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public DataSet ConsultarCita(int Usuario_id)
+        public DataSet ConsultarUsuario(int Usuario_id)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Consultar Usuario");
@@ -102,7 +102,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
         }
 
-        public DataTable ListarCita()
+        public DataTable ListarUsuario()
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar Usuario");

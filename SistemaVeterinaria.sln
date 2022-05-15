@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "CapaLogica\Ca
 		{5CA3158F-51EC-4759-84C8-A86320E3FAC2} = {5CA3158F-51EC-4759-84C8-A86320E3FAC2}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioVeterinariaWeb", "ServicioVeterinariaWeb\ServicioVeterinariaWeb.csproj", "{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{D0D6540D-1C14-4E04-AE10-507168AC02F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0D6540D-1C14-4E04-AE10-507168AC02F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0D6540D-1C14-4E04-AE10-507168AC02F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,7 +13,7 @@ using CapaLogica.LogiaNegocio;
 
 namespace CapaLogica.Servicios
 {
-    internal class ServicioEspecie : servicio, IDisposable
+    public class ServicioEspecie : servicio, IDisposable
     {
 
         private SqlCommand comando;
@@ -28,7 +28,7 @@ namespace CapaLogica.Servicios
             comando = new SqlCommand();
         }
 
-        public string insetarCita(Especie especie)
+        public string insetarEspecie(Especie especie)
         {
             comando = new SqlCommand();
 
@@ -49,7 +49,7 @@ namespace CapaLogica.Servicios
             return respuesta;
         }
 
-        public string modificarCita(Especie especie)
+        public string modificarEspecie(Especie especie)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR MODIFICAR Especie");
@@ -75,12 +75,12 @@ namespace CapaLogica.Servicios
             return respuesta;
         }
 
-        public DataSet ConsultarCita(int Especie_id)
+        public DataSet ConsultarEspecie(int Especie_id)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Consultar Duenno");
 
-            comando.CommandText ="ConsultarDuenno";
+            comando.CommandText ="ConsultarEspecie";
 
             comando.Parameters.Add("Especie_id", SqlDbType.Int);
             comando.Parameters["@Especie_id"].Value = Especie_id;
@@ -93,7 +93,7 @@ namespace CapaLogica.Servicios
 
         }
 
-        public DataTable ListarCita()
+        public DataTable ListarEspecie()
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar Especie");

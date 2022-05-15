@@ -12,7 +12,7 @@ using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
 namespace SistemaVeterinaria.CapaLogica.Servicios
 {
-    internal class ServicioExpediente : servicio, IDisposable
+    public class ServicioExpediente : servicio, IDisposable
     {
 
         private SqlCommand comando;
@@ -27,7 +27,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando = new SqlCommand();
         }
 
-        public string insetarCita(Expediente expediente)
+        public string insetarExpediente(Expediente expediente)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR INSERTAR Expediente");
@@ -53,7 +53,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public string modificarCita(Expediente expediente)
+        public string modificarExpediente(Expediente expediente)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR MODIFICAR Cita");
@@ -83,7 +83,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public DataSet ConsultarCita(int Expediente_id)
+        public DataSet ConsultarExpediente(int Expediente_id)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Consultar Expediente");
@@ -101,12 +101,12 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
         }
 
-        public DataTable ListarCita()
+        public DataTable ListarExpediente()
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar Expediente");
 
-            comando.CommandText ="ListarExpedientea";
+            comando.CommandText ="ListarExpediente";
 
             DataSet expediente = new DataSet();
 

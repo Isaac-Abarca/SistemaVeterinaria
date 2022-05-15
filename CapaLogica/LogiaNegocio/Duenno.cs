@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogica.LogiaNegocio
 {
-    internal class Duenno
+    public class Duenno
     {
         #region Atributos
 

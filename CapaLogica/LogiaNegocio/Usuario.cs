@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogica.LogiaNegocio
 {
-    internal class Usuario
+    public class Usuario
     {
         protected int    usuario_id;
         protected string usuario_nombre;

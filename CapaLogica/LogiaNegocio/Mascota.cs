@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogica.LogiaNegocio
 {
-    internal class Mascota
+    public class Mascota
     {
         #region atributos
 

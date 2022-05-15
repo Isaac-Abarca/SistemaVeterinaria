@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVeterinaria.CapaLogica.Servicios
 {
-    internal class ServicioDuenno : servicio, IDisposable
+    public class ServicioDuenno : servicio, IDisposable
     {
 
         private SqlCommand comando;
@@ -25,12 +25,12 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando = new SqlCommand();
         }
 
-        public string insetarCita(Duenno duenno)
+        public string insetarDuenno(Duenno duenno)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR INSERTAR Duenno");
 
-            comando.CommandText ="InsertarCita";
+            comando.CommandText ="InsertarDuenno";
 
             comando.Parameters.Add("Duenno_cedula", SqlDbType.VarChar);
             comando.Parameters["Duenno_cedula"].Value = duenno.Duenno_cedula;
@@ -57,12 +57,12 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public string modificarCita(Duenno duenno)
+        public string modificarDuenno(Duenno duenno)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR MODIFICAR Duenno");
 
-            comando.CommandText ="ModificarCita";
+            comando.CommandText ="ModificarDuenno";
 
             comando.Parameters.Add("Duenno_id", SqlDbType.Int);
             comando.Parameters["Duenno_id"].Value = duenno.Duenno_id;
@@ -93,7 +93,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public DataSet ConsultarCita(int Duenno_id)
+        public DataSet ConsultarDuenno(int Duenno_id)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Consultar Duenno");
@@ -111,7 +111,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
         }
 
-        public DataTable ListarCita()
+        public DataTable ListarDuenno()
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar Duenno");

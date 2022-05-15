@@ -12,7 +12,7 @@ using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
 namespace SistemaVeterinaria.CapaLogica.Servicios
 {
-    internal class ServicioCita : servicio, IDisposable
+    public class ServicioCita : servicio, IDisposable
     {
 
         private SqlCommand comando;

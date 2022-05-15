@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogica.LogiaNegocio
 {
-    internal class Especie
+    public class Especie
     {
         #region Atributos
         protected int especie_id;

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVeterinaria.CapaLogica.Servicios
 {
-    internal class ServicioMascota : servicio, IDisposable
+    public class ServicioMascota : servicio, IDisposable
     {
 
         private SqlCommand comando;
@@ -25,7 +25,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando = new SqlCommand();
         }
 
-        public string insetarMedicamento(Mascota mascota)
+        public string insetarMascota(Mascota mascota)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR INSERTAR Mascota");
@@ -63,13 +63,13 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public string modificarMedicamento(Mascota mascota)
+        public string modificarMascota(Mascota mascota)
         {
 
             comando = new SqlCommand();
             Console.WriteLine("GESTOR MODIFICAR Mascota");
 
-            comando.CommandText ="ModificarMedicamento";
+            comando.CommandText ="ModificarMascota";
 
             comando.Parameters.Add("Mascota_id", SqlDbType.Int);
             comando.Parameters["Mascota_id"].Value = mascota.Mascota_id;
@@ -107,12 +107,12 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return respuesta;
         }
 
-        public DataSet ConsultarMedicamento(int Mascota_id)
+        public DataSet ConsultarMascota(int Mascota_id)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Consultar Mascota");
 
-            comando.CommandText ="ConsultarMedicamento";
+            comando.CommandText ="ConsultarMascota";
 
             comando.Parameters.Add("Mascota_id", SqlDbType.Int);
             comando.Parameters["@Mascota_id"].Value = Mascota_id;
@@ -125,7 +125,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
         }
 
-        public DataTable ListarMedicamentos()
+        public DataTable ListarMascota()
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Listar Mascota");

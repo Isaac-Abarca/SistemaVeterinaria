@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CapaLogica.LogiaNegocio
 {
-    internal class Cita
+    public class Cita
     {
         #region Atributos
         protected int cita_id;
