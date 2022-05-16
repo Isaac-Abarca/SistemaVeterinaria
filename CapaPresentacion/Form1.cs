@@ -31,6 +31,8 @@ namespace CapaPresentacion
                 tratamiento.insertarTratamiento(Convert.ToInt32(txtMedicamento_id.Text), ( txtTratamiento_dosis.Text), txtTratamiento_observaciones.Text,
                     "A");
             }
+            cargarCargarGrid();
+            cargarComboTratamiento();
 
         }
 
