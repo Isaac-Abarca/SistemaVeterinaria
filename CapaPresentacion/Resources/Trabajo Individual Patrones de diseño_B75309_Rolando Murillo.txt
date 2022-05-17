@@ -1,0 +1,10 @@
+Para la realización de nuestro ejercicio, se procede al uso de patron de diseño "SINGLETON"
+Esto en consideración que se creó una super clase persona, la misma es instanciada una única
+vez por medio de la clase Employee y con ello se da la posibilidad que durante la ejecución
+del programa se de un punto de acceso global a dicha clase desde distintas partes del programa.
+
+INTEGRANTES:
+
+-Melannie Campos
+-Kevin Castrillo
+-Rolando Murillo

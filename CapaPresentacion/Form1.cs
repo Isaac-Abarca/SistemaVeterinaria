@@ -1,118 +1,137 @@
-ï»¿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using CapaPresentacion;
+using MultiColoredModerUi;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SistemaVeterinaria.CapaIntegracion;
-using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
-namespace CapaPresentacion
+namespace Login
 {
-    public partial class SistemaVeterinara : Form
+    public partial class Form1 : Form
     {
-        DataSet dsTratamiento = new DataSet();
-        DataTable dtTratamiento = new DataTable();
-
-        public SistemaVeterinara()
+        public Form1()
         {
             InitializeComponent();
         }
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-
-        private void btnInsertar_Click(object sender, EventArgs e)
+        private void txtUser_Enter(object sender, EventArgs e)
         {
-            using (GestorTratamiento tratamiento = new GestorTratamiento())
+            if (txtUser.Text == "Usuario")
             {
-                tratamiento.insertarTratamiento(Convert.ToInt32(txtMedicamento_id.Text), ( txtTratamiento_dosis.Text), txtTratamiento_observaciones.Text,
-                    "A");
+                txtUser.Text = "";
+                txtUser.ForeColor = Color.LightGray;
             }
-            cargarCargarGrid();
-            cargarComboTratamiento();
+        }
+        private void txtUser_Leave(object sender, EventArgs e)
+        {
+            if (txtUser.Text == "")
+            {
+                txtUser.Text = "Usuario";
+                txtUser.ForeColor = Color.Silver;
+            }
+        }
 
+        private void txtPasword_Enter(object sender, EventArgs e)
+        {
+            if (txtPasword.Text == "Contraseña")
+            {
+                txtPasword.Text = "";
+                txtPasword.ForeColor = Color.LightGray;
+                txtPasword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtPasword_Leave(object sender, EventArgs e)
+        {
+            if (txtPasword.Text == "")
+            {
+                txtPasword.Text = "Contraseña";
+                txtPasword.ForeColor = Color.Silver;
+                txtPasword.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void btnCerrrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnAccederr_Click(object sender, EventArgs e)
+        {
+            FormMainMenu meniPrincipal = new FormMainMenu();
+            meniPrincipal.Show();
+            meniPrincipal.FormClosed += Logout;
+            this.Hide();
+            //if (txtUser.Text != "Usuario")
+            //{
+            //    if(txtPasword.Text != "Contraseña")
+            //    {
+            //        //    UserModel user = new UserModel();
+            //        //    var validPassword = user.LoginUser(txtUser.Text, txtPasword.Text);
+            //        if (true)
+            //        {
+            //            SistemaVeterinara meniPrincipal = new SistemaVeterinara();
+            //            meniPrincipal.Show();
+            //            meniPrincipal.FormClosed += Logout;
+            //            this.Hide();
+            //        }
+            //        else
+            //        {
+            //            msError("Usuario o contraseña incorrectos \n    Por favor intente de nuevo");
+            //            txtPasword.Clear();
+            //            txtPasword.Text = "Contraseña";
+            //            txtPasword.Focus();
+
+            //        }
+            //    }
+            //    else msError("Favor ingrese su contraseña");
+            //}
+            //else
+            //    msError("Favor ingrese su nombre de usuario");
+        }
+
+        public void msError(string msg)
+        {
+            lblError.Text = "      "+msg;
+            lblError.Visible = true;
+        }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtPasword.Clear();
+            txtPasword.UseSystemPasswordChar = false;
+            txtPasword.Text = "Contraseña";
+            txtUser.Clear();
+            txtUser.Text = "Usuario";
+            lblError.Visible = false;
+            this.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cargarCargarGrid();
-            cargarComboTratamiento();
-        }
 
-        private void cargarCargarGrid()
-        {
-            using (GestorTratamiento gestorTratamiento = new GestorTratamiento())
-            {
-                datagritTratamientos.DataSource = gestorTratamiento.listarTratamientos();
-                datagritTratamientos.Columns["Tratamiento_id"].Visible = false;
-                datagritTratamientos.Columns["Tratamiento_estado"].Visible = false;
-            }
-               
-        }
-
-        private void cargarComboTratamiento()
-        {
-            using (GestorTratamiento tratamiento = new GestorTratamiento()) 
-            {
-                cbxTratamiento.DataSource = tratamiento.listarTratamientos();
-                cbxTratamiento.ValueMember = "Tratamiento_id";
-                cbxTratamiento.DisplayMember = "Tratamiento_dosis";
-            }
-        }
-
-        private void buscarTratamiento()
-        {
-            int tratamiento_id = int.Parse(cbxTratamiento.SelectedValue.ToString());
-            using (GestorTratamiento tratamiento = new GestorTratamiento())
-            {
-                this.dsTratamiento = tratamiento.consultaTratamientos(tratamiento_id);
-                this.dtTratamiento = this.dsTratamiento.Tables[0];
-            }
-            cargarDatosTratamiento();
-        }
-
-        private void cargarDatosTratamiento()
-        {
-            txtTratamiento_Id .Text = this.dtTratamiento.Rows[0]["Tratamiento_id"].ToString();
-            txtMedicamento_id.Text = this.dtTratamiento.Rows[0]["Medicamento_id"].ToString();
-            txtTratamiento_dosis.Text = this.dtTratamiento.Rows[0]["Tratamiento_dosis"].ToString();
-            txtTratamiento_observaciones.Text = this.dtTratamiento.Rows[0]["Tratamiento_observaciones"].ToString();
-        }
-
-        private void datagritTratamientos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int numFila = datagritTratamientos.CurrentCell.RowIndex;
-                int tratamiento_id = int.Parse(this.datagritTratamientos[0, numFila].Value.ToString());
-
-                using (GestorTratamiento tratamiento = new GestorTratamiento())
-                {
-                    this.dsTratamiento = tratamiento.consultaTratamientos(tratamiento_id);
-                    this.dtTratamiento = this.dsTratamiento.Tables[0];
-                }
-                cargarDatosTratamiento();
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Base de datos vacia. Ingrese datos","Alerta",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            
-
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            using (GestorTratamiento tratamiento = new GestorTratamiento())
-            {
-                Tratamiento tratamiento1 = new Tratamiento(int.Parse(txtTratamiento_Id.Text), int.Parse(txtMedicamento_id.Text), (txtTratamiento_dosis.Text), txtTratamiento_observaciones.Text,
-                     "A");
-                tratamiento.modificarTratamientos(tratamiento1);
-            }
         }
     }
 }

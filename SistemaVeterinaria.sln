@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "CapaLogica\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioVeterinariaWeb", "ServicioVeterinariaWeb\ServicioVeterinariaWeb.csproj", "{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaComun", "..\LoginLayered\CapaComun\CapaComun.csproj", "{6EF12598-8342-41E9-917F-C6CCA6E214AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8CBB410-6E4E-4A4D-B477-814BF5300B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF12598-8342-41E9-917F-C6CCA6E214AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF12598-8342-41E9-917F-C6CCA6E214AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF12598-8342-41E9-917F-C6CCA6E214AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF12598-8342-41E9-917F-C6CCA6E214AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
