@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaComun.Cache;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -17,7 +18,6 @@ namespace SistemaVeterinaria.CapaConexion
                                            server = MAMALONA;
                                            Trusted_Connection = yes;
                                            database = Sistema_veterinaria");
-            
         }
 
         protected void cerrarConexion()
@@ -101,6 +101,44 @@ namespace SistemaVeterinaria.CapaConexion
             return dataSet;
         }
 
+        public bool Logins(string user, string pass)
+        {
+            try
+            {
+                using (var command = new SqlCommand())
+                {
+                    this.abrirConexion();
+                    command.Connection = conexion;
+                    command.CommandText = "select * from TUsuario where @usuario_nombre=usuario_nombre  and @usuario_contrasenna=usuario_contrasenna ";
+                    command.Parameters.AddWithValue("@usuario_nombre", user);
+                    command.Parameters.AddWithValue("@usuario_contrasenna", pass);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            UserLoginCache.IdUser = reader.GetInt32(0);
+                            UserLoginCache.LoginName = reader.GetString(1);
+                            UserLoginCache.Password = reader.GetString(2);
+                            UserLoginCache.Position = reader.GetString(3);
+                            UserLoginCache.Estado = reader.GetString(4);
+                        }
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+
+            }
+            catch (SqlException error)
+            {
+                Console.WriteLine(error.Message);
+                this.cerrarConexion();
+                return false;
+            }
+               
+        }
 
     }
 }

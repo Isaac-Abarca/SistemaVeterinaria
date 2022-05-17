@@ -1,4 +1,5 @@
-﻿using CapaPresentacion;
+﻿using CapaComun.Cache;
+using CapaPresentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,14 +99,14 @@ namespace MultiColoredModerUi
 
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
+        private void btnCita_Click(object sender, EventArgs e)
         {
-            openChildForm(new SistemaVeterinara(),sender);
+            openChildForm(new FormCitas(),sender);
         }
 
-        private void btnOrdenes_Click(object sender, EventArgs e)
+        private void btnExpediente_Click(object sender, EventArgs e)
         {
-            openChildForm(new SistemaVeterinara(), sender);
+            openChildForm(new FormExpediente(), sender);
         }
 
         private void btnConsumidor_Click(object sender, EventArgs e)
@@ -115,21 +116,28 @@ namespace MultiColoredModerUi
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            openChildForm(new SistemaVeterinara(), sender);
+            openChildForm(new FormReportes(), sender);
         }
 
         private void btnNotificaciones_Click(object sender, EventArgs e)
         {
-            openChildForm(new SistemaVeterinara(), sender);
+            openChildForm(new FormRegistros(), sender);
         }
 
         private void btnConfiguraciones_Click(object sender, EventArgs e)
         {
-            openChildForm(new SistemaVeterinara(), sender);
+            openChildForm(new FormConfiguraciones(), sender);
         }
 
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
+            LoadUserData();
+        }
+
+        private void LoadUserData()
+        {
+            lblUser.Text = UserLoginCache.LoginName;
+            lblTipoUser.Text = UserLoginCache.Position;
 
         }
 
@@ -151,6 +159,11 @@ namespace MultiColoredModerUi
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
             btnCerrarChildForm.Visible = false;
+
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

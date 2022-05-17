@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CapaIntegracion
 {
-    internal class GestorUsuario : servicio, IDisposable
+    public class GestorUsuario : servicio, IDisposable
     {
         public GestorUsuario()
         {
@@ -47,6 +47,12 @@ namespace CapaIntegracion
         {
             using (ServicioUsuario Usuario = new ServicioUsuario())
                 return Usuario.modificarUsuario(usuario);
+        }
+
+        public bool Login(string user, string pass)
+        {
+            using (ServicioUsuario Usuario = new ServicioUsuario())
+                return Usuario.Login(user, pass);
         }
     }
 }

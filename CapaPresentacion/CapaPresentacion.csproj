@@ -56,6 +56,36 @@
     <Compile Include="Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCitas.Designer.cs">
+      <DependentUpon>FormCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfiguraciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfiguraciones.Designer.cs">
+      <DependentUpon>FormConfiguraciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExpediente.Designer.cs">
+      <DependentUpon>FormExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegistros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistros.Designer.cs">
+      <DependentUpon>FormRegistros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportes.Designer.cs">
+      <DependentUpon>FormReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTratamiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +103,18 @@
     <Compile Include="ThemeColors.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCitas.resx">
+      <DependentUpon>FormCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfiguraciones.resx">
+      <DependentUpon>FormConfiguraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExpediente.resx">
+      <DependentUpon>FormExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistros.resx">
+      <DependentUpon>FormRegistros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTratamiento.resx">
       <DependentUpon>FormTratamiento.cs</DependentUpon>
@@ -104,6 +146,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\LoginLayered\CapaComun\CapaComun.csproj">
+      <Project>{6EF12598-8342-41E9-917F-C6CCA6E214AA}</Project>
+      <Name>CapaComun</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaConexion\CapaConexion.csproj">
       <Project>{5CA3158F-51EC-4759-84C8-A86320E3FAC2}</Project>
       <Name>CapaConexion</Name>
@@ -118,6 +164,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Minimize_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-agenda-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-folder-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pills-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-graph-report-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-registry-editor-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-setting-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-60.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

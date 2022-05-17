@@ -80,36 +80,37 @@ namespace Login
 
         private void btnAccederr_Click(object sender, EventArgs e)
         {
-            FormMainMenu meniPrincipal = new FormMainMenu();
-            meniPrincipal.Show();
-            meniPrincipal.FormClosed += Logout;
-            this.Hide();
-            //if (txtUser.Text != "Usuario")
-            //{
-            //    if(txtPasword.Text != "Contraseña")
-            //    {
-            //        //    UserModel user = new UserModel();
-            //        //    var validPassword = user.LoginUser(txtUser.Text, txtPasword.Text);
-            //        if (true)
-            //        {
-            //            SistemaVeterinara meniPrincipal = new SistemaVeterinara();
-            //            meniPrincipal.Show();
-            //            meniPrincipal.FormClosed += Logout;
-            //            this.Hide();
-            //        }
-            //        else
-            //        {
-            //            msError("Usuario o contraseña incorrectos \n    Por favor intente de nuevo");
-            //            txtPasword.Clear();
-            //            txtPasword.Text = "Contraseña";
-            //            txtPasword.Focus();
+           
+            if (txtUser.Text != "Usuario")
+            {
+                if(txtPasword.Text != "Contraseña")
+                {
+                    using (CapaIntegracion.GestorUsuario user = new CapaIntegracion.GestorUsuario())
+                    {
+                        var validPassword = user.Login(txtUser.Text, txtPasword.Text);
+                        if (validPassword == true)
+                        {
+                            FormMainMenu meniPrincipal = new FormMainMenu();
+                            meniPrincipal.Show();
+                            meniPrincipal.FormClosed += Logout;
+                            this.Hide();
+                        }
+                        else
+                        {
+                            msError("Usuario o contraseña incorrectos \n    Por favor intente de nuevo");
+                            txtPasword.Clear();
+                            txtPasword.Text = "Contraseña";
+                            txtPasword.Focus();
 
-            //        }
-            //    }
-            //    else msError("Favor ingrese su contraseña");
-            //}
-            //else
-            //    msError("Favor ingrese su nombre de usuario");
+                        }
+                    }
+                    
+                    
+                }
+                else msError("Favor ingrese su contraseña");
+            }
+            else
+                msError("Favor ingrese su nombre de usuario");
         }
 
         public void msError(string msg)

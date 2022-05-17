@@ -46,59 +46,67 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbxTratamiento = new System.Windows.Forms.ComboBox();
             this.btnBuscarTratamiento = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagritTratamientos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTratamiento_Id
             // 
             this.lblTratamiento_Id.AutoSize = true;
-            this.lblTratamiento_Id.Location = new System.Drawing.Point(59, 56);
+            this.lblTratamiento_Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblTratamiento_Id.Location = new System.Drawing.Point(40, 98);
             this.lblTratamiento_Id.Name = "lblTratamiento_Id";
-            this.lblTratamiento_Id.Size = new System.Drawing.Size(75, 13);
+            this.lblTratamiento_Id.Size = new System.Drawing.Size(102, 18);
             this.lblTratamiento_Id.TabIndex = 0;
             this.lblTratamiento_Id.Text = "Tratamiento Id";
             // 
             // lblMedicamento_id
             // 
             this.lblMedicamento_id.AutoSize = true;
-            this.lblMedicamento_id.Location = new System.Drawing.Point(59, 88);
+            this.lblMedicamento_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblMedicamento_id.Location = new System.Drawing.Point(40, 135);
             this.lblMedicamento_id.Name = "lblMedicamento_id";
-            this.lblMedicamento_id.Size = new System.Drawing.Size(75, 13);
+            this.lblMedicamento_id.Size = new System.Drawing.Size(100, 18);
             this.lblMedicamento_id.TabIndex = 1;
             this.lblMedicamento_id.Text = "Medicaento Id";
             // 
             // lblTratamiento_dosis
             // 
             this.lblTratamiento_dosis.AutoSize = true;
-            this.lblTratamiento_dosis.Location = new System.Drawing.Point(59, 113);
+            this.lblTratamiento_dosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblTratamiento_dosis.Location = new System.Drawing.Point(40, 169);
             this.lblTratamiento_dosis.Name = "lblTratamiento_dosis";
-            this.lblTratamiento_dosis.Size = new System.Drawing.Size(88, 13);
+            this.lblTratamiento_dosis.Size = new System.Drawing.Size(125, 18);
             this.lblTratamiento_dosis.TabIndex = 2;
             this.lblTratamiento_dosis.Text = "Dosis tratamiento";
             // 
             // lblTratamiento_observaiones
             // 
             this.lblTratamiento_observaiones.AutoSize = true;
-            this.lblTratamiento_observaiones.Location = new System.Drawing.Point(59, 139);
+            this.lblTratamiento_observaiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblTratamiento_observaiones.Location = new System.Drawing.Point(40, 201);
             this.lblTratamiento_observaiones.Name = "lblTratamiento_observaiones";
-            this.lblTratamiento_observaiones.Size = new System.Drawing.Size(78, 13);
+            this.lblTratamiento_observaiones.Size = new System.Drawing.Size(108, 18);
             this.lblTratamiento_observaiones.TabIndex = 3;
             this.lblTratamiento_observaiones.Text = "Observaciones";
             // 
             // lblTratamiento_Estado
             // 
             this.lblTratamiento_Estado.AutoSize = true;
+            this.lblTratamiento_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lblTratamiento_Estado.Location = new System.Drawing.Point(59, 173);
             this.lblTratamiento_Estado.Name = "lblTratamiento_Estado";
-            this.lblTratamiento_Estado.Size = new System.Drawing.Size(0, 13);
+            this.lblTratamiento_Estado.Size = new System.Drawing.Size(0, 18);
             this.lblTratamiento_Estado.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label6.Location = new System.Drawing.Point(59, 207);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.Size = new System.Drawing.Size(0, 18);
             this.label6.TabIndex = 5;
             // 
             // label7
@@ -111,37 +119,37 @@
             // 
             // txtTratamiento_Id
             // 
-            this.txtTratamiento_Id.Location = new System.Drawing.Point(164, 56);
+            this.txtTratamiento_Id.Location = new System.Drawing.Point(171, 99);
             this.txtTratamiento_Id.Name = "txtTratamiento_Id";
             this.txtTratamiento_Id.Size = new System.Drawing.Size(206, 20);
             this.txtTratamiento_Id.TabIndex = 7;
             // 
             // txtMedicamento_id
             // 
-            this.txtMedicamento_id.Location = new System.Drawing.Point(164, 88);
+            this.txtMedicamento_id.Location = new System.Drawing.Point(171, 133);
             this.txtMedicamento_id.Name = "txtMedicamento_id";
             this.txtMedicamento_id.Size = new System.Drawing.Size(206, 20);
             this.txtMedicamento_id.TabIndex = 8;
             // 
             // txtTratamiento_dosis
             // 
-            this.txtTratamiento_dosis.Location = new System.Drawing.Point(164, 115);
+            this.txtTratamiento_dosis.Location = new System.Drawing.Point(171, 170);
             this.txtTratamiento_dosis.Name = "txtTratamiento_dosis";
             this.txtTratamiento_dosis.Size = new System.Drawing.Size(206, 20);
             this.txtTratamiento_dosis.TabIndex = 9;
             // 
             // txtTratamiento_observaciones
             // 
-            this.txtTratamiento_observaciones.Location = new System.Drawing.Point(164, 142);
+            this.txtTratamiento_observaciones.Location = new System.Drawing.Point(171, 201);
             this.txtTratamiento_observaciones.Name = "txtTratamiento_observaciones";
             this.txtTratamiento_observaciones.Size = new System.Drawing.Size(206, 20);
             this.txtTratamiento_observaciones.TabIndex = 10;
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(85, 222);
+            this.btnInsertar.Location = new System.Drawing.Point(85, 250);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertar.Size = new System.Drawing.Size(74, 33);
             this.btnInsertar.TabIndex = 12;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -149,9 +157,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(183, 222);
+            this.btnModificar.Location = new System.Drawing.Point(184, 250);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(76, 33);
             this.btnModificar.TabIndex = 13;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -159,17 +167,22 @@
             // 
             // datagritTratamientos
             // 
+            this.datagritTratamientos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagritTratamientos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.datagritTratamientos.BackgroundColor = System.Drawing.SystemColors.Window;
             this.datagritTratamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagritTratamientos.Location = new System.Drawing.Point(451, 56);
+            this.datagritTratamientos.Location = new System.Drawing.Point(443, 99);
             this.datagritTratamientos.Name = "datagritTratamientos";
-            this.datagritTratamientos.Size = new System.Drawing.Size(568, 301);
+            this.datagritTratamientos.ReadOnly = true;
+            this.datagritTratamientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagritTratamientos.Size = new System.Drawing.Size(500, 301);
             this.datagritTratamientos.TabIndex = 14;
             this.datagritTratamientos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagritTratamientos_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 329);
+            this.label1.Location = new System.Drawing.Point(82, 324);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 15;
@@ -178,33 +191,52 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 379);
+            this.comboBox1.Location = new System.Drawing.Point(459, 59);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(113, 21);
             this.comboBox1.TabIndex = 16;
             // 
             // cbxTratamiento
             // 
             this.cbxTratamiento.FormattingEnabled = true;
-            this.cbxTratamiento.Location = new System.Drawing.Point(117, 321);
+            this.cbxTratamiento.Location = new System.Drawing.Point(123, 321);
             this.cbxTratamiento.Name = "cbxTratamiento";
             this.cbxTratamiento.Size = new System.Drawing.Size(121, 21);
             this.cbxTratamiento.TabIndex = 18;
             // 
             // btnBuscarTratamiento
             // 
-            this.btnBuscarTratamiento.Location = new System.Drawing.Point(280, 318);
+            this.btnBuscarTratamiento.Location = new System.Drawing.Point(832, 60);
             this.btnBuscarTratamiento.Name = "btnBuscarTratamiento";
-            this.btnBuscarTratamiento.Size = new System.Drawing.Size(128, 23);
+            this.btnBuscarTratamiento.Size = new System.Drawing.Size(96, 20);
             this.btnBuscarTratamiento.TabIndex = 19;
-            this.btnBuscarTratamiento.Text = "Buscar Tratamiento";
+            this.btnBuscarTratamiento.Text = "Buscar ";
             this.btnBuscarTratamiento.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(279, 250);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(81, 33);
+            this.btnEliminar.TabIndex = 20;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(594, 59);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(207, 20);
+            this.txtBuscar.TabIndex = 21;
             // 
             // SistemaVeterinara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 450);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(1017, 450);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscarTratamiento);
             this.Controls.Add(this.cbxTratamiento);
             this.Controls.Add(this.comboBox1);
@@ -252,6 +284,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cbxTratamiento;
         private System.Windows.Forms.Button btnBuscarTratamiento;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
 

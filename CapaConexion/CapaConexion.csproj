@@ -44,5 +44,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="servicio.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LoginLayered\CapaComun\CapaComun.csproj">
+      <Project>{6EF12598-8342-41E9-917F-C6CCA6E214AA}</Project>
+      <Name>CapaComun</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

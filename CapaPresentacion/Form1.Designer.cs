@@ -32,6 +32,7 @@ namespace Login
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPasword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,11 +41,10 @@ namespace Login
             this.lblError = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,9 +54,18 @@ namespace Login
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 286);
+            this.panel1.Size = new System.Drawing.Size(214, 318);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(-13, 49);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(227, 166);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // txtUser
             // 
@@ -64,7 +73,7 @@ namespace Login
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
             this.txtUser.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUser.Location = new System.Drawing.Point(276, 72);
+            this.txtUser.Location = new System.Drawing.Point(326, 94);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(331, 22);
             this.txtUser.TabIndex = 1;
@@ -78,7 +87,7 @@ namespace Login
             this.txtPasword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPasword.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
             this.txtPasword.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPasword.Location = new System.Drawing.Point(276, 127);
+            this.txtPasword.Location = new System.Drawing.Point(326, 138);
             this.txtPasword.Name = "txtPasword";
             this.txtPasword.Size = new System.Drawing.Size(331, 22);
             this.txtPasword.TabIndex = 2;
@@ -91,7 +100,7 @@ namespace Login
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 20F);
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(399, 8);
+            this.label1.Location = new System.Drawing.Point(453, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 37);
             this.label1.TabIndex = 3;
@@ -106,7 +115,7 @@ namespace Login
             this.btnAccederr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccederr.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
             this.btnAccederr.ForeColor = System.Drawing.Color.DarkGray;
-            this.btnAccederr.Location = new System.Drawing.Point(276, 201);
+            this.btnAccederr.Location = new System.Drawing.Point(326, 220);
             this.btnAccederr.Name = "btnAccederr";
             this.btnAccederr.Size = new System.Drawing.Size(331, 35);
             this.btnAccederr.TabIndex = 3;
@@ -120,7 +129,7 @@ namespace Login
             this.linkRecupererContra.AutoSize = true;
             this.linkRecupererContra.Font = new System.Drawing.Font("Yu Gothic UI", 9.75F);
             this.linkRecupererContra.LinkColor = System.Drawing.Color.DimGray;
-            this.linkRecupererContra.Location = new System.Drawing.Point(367, 248);
+            this.linkRecupererContra.Location = new System.Drawing.Point(412, 267);
             this.linkRecupererContra.Name = "linkRecupererContra";
             this.linkRecupererContra.Size = new System.Drawing.Size(169, 17);
             this.linkRecupererContra.TabIndex = 0;
@@ -133,7 +142,7 @@ namespace Login
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::CapaPresentacion.Properties.Resources.icons8_box_important_15;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(276, 170);
+            this.lblError.Location = new System.Drawing.Point(323, 178);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(58, 13);
             this.lblError.TabIndex = 8;
@@ -144,9 +153,9 @@ namespace Login
             // btnMinimizar
             // 
             this.btnMinimizar.ErrorImage = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
-            this.btnMinimizar.Location = new System.Drawing.Point(620, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(685, 0);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(28, 12);
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 23);
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -154,28 +163,19 @@ namespace Login
             // btnCerrrar
             // 
             this.btnCerrrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrrar.Image")));
-            this.btnCerrrar.Location = new System.Drawing.Point(654, 0);
+            this.btnCerrrar.Location = new System.Drawing.Point(719, 0);
             this.btnCerrrar.Name = "btnCerrrar";
-            this.btnCerrrar.Size = new System.Drawing.Size(13, 12);
+            this.btnCerrrar.Size = new System.Drawing.Size(24, 21);
             this.btnCerrrar.TabIndex = 6;
             this.btnCerrrar.TabStop = false;
             this.btnCerrrar.Click += new System.EventHandler(this.btnCerrrar_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-13, 49);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(227, 166);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(669, 286);
+            this.ClientSize = new System.Drawing.Size(744, 318);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCerrrar);
@@ -193,9 +193,9 @@ namespace Login
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

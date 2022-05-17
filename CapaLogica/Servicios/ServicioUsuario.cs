@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaComun.Cache;
 using CapaLogica.LogiaNegocio;
 
 //Bibliotecas
@@ -115,6 +116,11 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             DataTable miTabla = Usuario.Tables[0];
             return miTabla;
 
+        }
+
+        public bool Login(string user, string pass)
+        {
+            return Logins(user, pass);
         }
 
 
