@@ -32,7 +32,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtMacota_id = new System.Windows.Forms.TextBox();
             this.txtVeterinario_id = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.dtHora = new System.Windows.Forms.DateTimePicker();
             this.lblMascotaId = new System.Windows.Forms.Label();
@@ -46,8 +46,9 @@
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.btnBusqueda = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtCita = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCita)).BeginInit();
             this.SuspendLayout();
             // 
             // lblid
@@ -82,13 +83,14 @@
             this.txtVeterinario_id.Size = new System.Drawing.Size(123, 20);
             this.txtVeterinario_id.TabIndex = 3;
             // 
-            // textBox4
+            // txtEstado
             // 
-            this.textBox4.Location = new System.Drawing.Point(166, 315);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(123, 20);
-            this.textBox4.TabIndex = 4;
-            this.textBox4.WordWrap = false;
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Location = new System.Drawing.Point(166, 315);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(123, 20);
+            this.txtEstado.TabIndex = 4;
+            this.txtEstado.WordWrap = false;
             // 
             // dtFecha
             // 
@@ -160,37 +162,40 @@
             // btnInsertar
             // 
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnInsertar.Location = new System.Drawing.Point(42, 369);
+            this.btnInsertar.Location = new System.Drawing.Point(36, 369);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(75, 35);
+            this.btnInsertar.Size = new System.Drawing.Size(65, 35);
             this.btnInsertar.TabIndex = 12;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnModificar.Location = new System.Drawing.Point(138, 369);
+            this.btnModificar.Location = new System.Drawing.Point(107, 369);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(92, 35);
+            this.btnModificar.Size = new System.Drawing.Size(80, 35);
             this.btnModificar.TabIndex = 13;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnEliminar.Location = new System.Drawing.Point(248, 369);
+            this.btnEliminar.Location = new System.Drawing.Point(193, 369);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(79, 35);
             this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.Enabled = false;
-            this.txtBusqueda.Location = new System.Drawing.Point(638, 70);
+            this.txtBusqueda.Location = new System.Drawing.Point(654, 71);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(146, 20);
             this.txtBusqueda.TabIndex = 15;
@@ -198,39 +203,52 @@
             // cmbBuscar
             // 
             this.cmbBuscar.FormattingEnabled = true;
-            this.cmbBuscar.Location = new System.Drawing.Point(515, 69);
+            this.cmbBuscar.Location = new System.Drawing.Point(531, 70);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(107, 21);
             this.cmbBuscar.TabIndex = 16;
             // 
             // btnBusqueda
             // 
-            this.btnBusqueda.Location = new System.Drawing.Point(803, 66);
+            this.btnBusqueda.Location = new System.Drawing.Point(819, 67);
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(75, 23);
             this.btnBusqueda.TabIndex = 17;
             this.btnBusqueda.Text = "Buscar";
             this.btnBusqueda.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dtCita
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(386, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(527, 304);
-            this.dataGridView1.TabIndex = 18;
+            this.dtCita.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtCita.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dtCita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtCita.Location = new System.Drawing.Point(402, 111);
+            this.dtCita.Name = "dtCita";
+            this.dtCita.ReadOnly = true;
+            this.dtCita.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtCita.Size = new System.Drawing.Size(527, 304);
+            this.dtCita.TabIndex = 18;
+            this.dtCita.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Cell_click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button2.Location = new System.Drawing.Point(287, 369);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 35);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Limpiar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(947, 488);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1015, 487);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dtCita);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.txtBusqueda);
@@ -244,14 +262,15 @@
             this.Controls.Add(this.lblMascotaId);
             this.Controls.Add(this.dtHora);
             this.Controls.Add(this.dtFecha);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtVeterinario_id);
             this.Controls.Add(this.txtMacota_id);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblid);
             this.Name = "FormCitas";
             this.Text = "FormCitas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormCitas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtCita)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +282,7 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtMacota_id;
         private System.Windows.Forms.TextBox txtVeterinario_id;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.DateTimePicker dtHora;
         private System.Windows.Forms.Label lblMascotaId;
@@ -277,6 +296,7 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.Button btnBusqueda;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtCita;
+        private System.Windows.Forms.Button button2;
     }
 }

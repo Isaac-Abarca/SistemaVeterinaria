@@ -15,7 +15,7 @@ namespace SistemaVeterinaria.CapaLogica.LogiaNegocio
         protected int    Mascota_id;
         protected int    Veterinario_id;
         protected int    Tratamiento_id;
-        protected Date   Expediente_fecha;
+        protected string Expediente_fecha;
         protected string Expediente_estado;
         #endregion
 
@@ -24,13 +24,13 @@ namespace SistemaVeterinaria.CapaLogica.LogiaNegocio
         public int Mascota_id1 { get => Mascota_id; set => Mascota_id=value; }
         public int Veterinario_id1 { get => Veterinario_id; set => Veterinario_id=value; }
         public int Tratamiento_id1 { get => Tratamiento_id; set => Tratamiento_id=value; }
-        public Date Expediente_fecha1 { get => Expediente_fecha; set => Expediente_fecha=value; }
+        public string Expediente_fecha1 { get => Expediente_fecha; set => Expediente_fecha=value; }
         public string Expediente_estado1 { get => Expediente_estado; set => Expediente_estado=value; }
         #endregion
 
         #region CONSTRUCTORES
         public Expediente(int expediente_id, int mascota_id, int veterinario_id,
-            int tratamiento_id, Date expediente_fecha, string expediente_estado)
+            int tratamiento_id, string expediente_fecha, string expediente_estado)
         {
             Expediente_id1=expediente_id;
             Mascota_id1=mascota_id;
@@ -41,7 +41,7 @@ namespace SistemaVeterinaria.CapaLogica.LogiaNegocio
         }
 
         public Expediente(int mascota_id, int veterinario_id,
-            int tratamiento_id, Date expediente_fecha, string expediente_estado)
+            int tratamiento_id, string expediente_fecha, string expediente_estado)
         {
             Expediente_id1=0;
             Mascota_id1=mascota_id;

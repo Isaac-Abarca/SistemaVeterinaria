@@ -123,6 +123,24 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return Logins(user, pass);
         }
 
+        public string InactivarTratamiento(int id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar usuario");
+
+            comando.CommandText ="InactivarUsuario";
+
+            comando.Parameters.Add("@usuario_id", SqlDbType.Int);
+            comando.Parameters["@usuario_id"].Value = id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la MODIFICACION usuario";
+            Console.WriteLine(respuesta);
+
+            return respuesta;
+        }
+
 
     }
 }

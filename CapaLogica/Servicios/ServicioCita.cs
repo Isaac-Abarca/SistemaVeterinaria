@@ -43,11 +43,11 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Cita_fecha", SqlDbType.Date);
             comando.Parameters["Cita_fecha"].Value = cita.Cita_fecha;
 
+            comando.Parameters.Add("Cita_hora", SqlDbType.Time);
+            comando.Parameters["Cita_hora"].Value = cita.Cita_hora;
+
             comando.Parameters.Add("Cita_estado", SqlDbType.VarChar);
             comando.Parameters["Cita_estado"].Value = cita.Cita_estado;
-
-            comando.Parameters.Add("Cita_hora", SqlDbType.DateTime);
-            comando.Parameters["Cita_hora"].Value = cita.Cita_hora;
 
             respuesta = this.ejecutaSentencia(comando);
             if (respuesta == "")
@@ -97,7 +97,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.CommandText ="ConsultarCita";
 
             comando.Parameters.Add("Cita_id", SqlDbType.Int);
-            comando.Parameters["@Cita_id"].Value = Cita_id;
+            comando.Parameters["Cita_id"].Value = Cita_id;
 
             DataSet dataSet = new DataSet();
             this.abrirConexion();
@@ -121,5 +121,25 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return miTabla;
 
         }
+
+        public string InactivarCita(int id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar Cita");
+
+            comando.CommandText ="InactivarCita";
+
+            comando.Parameters.Add("@Cita_id", SqlDbType.Int);
+            comando.Parameters["@Cita_id"].Value = id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la inactivacion de la Cita";
+            Console.WriteLine(respuesta);
+
+            return respuesta;
+        }
+
+
     }
 }

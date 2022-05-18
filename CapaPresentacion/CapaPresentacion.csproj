@@ -37,8 +37,39 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bibliotecas\CapaIntegracion.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=7.10.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.OData.Edm.7.10.0\lib\net45\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,11 +99,35 @@
     <Compile Include="FormConfiguraciones.Designer.cs">
       <DependentUpon>FormConfiguraciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDuenno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDuenno.Designer.cs">
+      <DependentUpon>FormDuenno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEspecie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEspecie.Designer.cs">
+      <DependentUpon>FormEspecie.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormExpediente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormExpediente.Designer.cs">
       <DependentUpon>FormExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMascota.Designer.cs">
+      <DependentUpon>FormMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedicamento.Designer.cs">
+      <DependentUpon>FormMedicamento.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistros.cs">
       <SubType>Form</SubType>
@@ -98,6 +153,18 @@
     <Compile Include="Forms\FormMainMenu.designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuario.Designer.cs">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVeterinario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVeterinario.Designer.cs">
+      <DependentUpon>FormVeterinario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThemeColors.cs" />
@@ -110,8 +177,20 @@
     <EmbeddedResource Include="FormConfiguraciones.resx">
       <DependentUpon>FormConfiguraciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDuenno.resx">
+      <DependentUpon>FormDuenno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEspecie.resx">
+      <DependentUpon>FormEspecie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormExpediente.resx">
       <DependentUpon>FormExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMascota.resx">
+      <DependentUpon>FormMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedicamento.resx">
+      <DependentUpon>FormMedicamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistros.resx">
       <DependentUpon>FormRegistros.cs</DependentUpon>
@@ -121,6 +200,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuario.resx">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVeterinario.resx">
+      <DependentUpon>FormVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -132,6 +217,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -191,6 +277,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-user-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-circled-x-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-log-out-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize_Icon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

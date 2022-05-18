@@ -59,7 +59,6 @@ namespace SistemaVeterinaria.CapaConexion
             {
                 this.abrirConexion();
                 miComando.ExecuteScalar();
-
             }
             catch(SqlException error)
             {

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CapaIntegracion
 {
-    internal class GestorExpediente : servicio, IDisposable
+    public class GestorExpediente : servicio, IDisposable
     {
         public GestorExpediente()
         {
@@ -21,16 +21,16 @@ namespace CapaIntegracion
         {
         }
 
-        public string insertarVeterinario(int Mascota_id,
+        public string insertarExpediente(int Mascota_id,
                                             int Veterinario_id,
                                             int Tratamiento_id,
-                                            Date Expediente_fecha,
+                                            string Expediente_fecha,
                                             string Expediente_estado)
         {
-            Expediente nuevoVeterinario = new Expediente(Mascota_id, Veterinario_id, Tratamiento_id, Expediente_fecha,
+            Expediente nuevoExpediente = new Expediente(Mascota_id, Veterinario_id, Tratamiento_id, Expediente_fecha,
                Expediente_estado);
             using (ServicioExpediente Expediente = new ServicioExpediente())
-                return Expediente.insetarExpediente(nuevoVeterinario);
+                return Expediente.insetarExpediente(nuevoExpediente);
         }
 
         public DataTable listarExpediente()
@@ -50,6 +50,12 @@ namespace CapaIntegracion
         {
             using (ServicioExpediente Expediente = new ServicioExpediente())
                 return Expediente.modificarExpediente(expediente);
+        }
+
+        public string inactivarExpediente(int id)
+        {
+            using (ServicioExpediente Expediente = new ServicioExpediente())
+                return Expediente.inactivarExpediente(id);
         }
     }
 }

@@ -32,14 +32,14 @@ namespace Login
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPasword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAccederr = new System.Windows.Forms.Button();
             this.linkRecupererContra = new System.Windows.Forms.LinkLabel();
-            this.lblError = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.btnCerrrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -49,23 +49,14 @@ namespace Login
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 318);
+            this.panel1.Size = new System.Drawing.Size(227, 318);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-13, 49);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(227, 166);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
             // 
             // txtUser
             // 
@@ -136,6 +127,26 @@ namespace Login
             this.linkRecupererContra.TabStop = true;
             this.linkRecupererContra.Text = "¿Ha olvidado su contrseña?";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(-13, 49);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(227, 166);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.ErrorImage = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
+            this.btnMinimizar.Image = global::CapaPresentacion.Properties.Resources.Minimize_Icon1;
+            this.btnMinimizar.Location = new System.Drawing.Point(696, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(17, 21);
+            this.btnMinimizar.TabIndex = 7;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
             // lblError
             // 
             this.lblError.AutoSize = true;
@@ -149,16 +160,6 @@ namespace Login
             this.lblError.Text = "                 ";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblError.Visible = false;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.ErrorImage = global::CapaPresentacion.Properties.Resources.Minimize_Icon;
-            this.btnMinimizar.Location = new System.Drawing.Point(685, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(28, 23);
-            this.btnMinimizar.TabIndex = 7;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCerrrar
             // 
@@ -176,6 +177,7 @@ namespace Login
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(744, 318);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCerrrar);
@@ -184,7 +186,6 @@ namespace Login
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPasword);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Opacity = 0.9D;

@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class SistemaVeterinara
+    partial class FormTratamiento
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -48,6 +48,7 @@
             this.btnBuscarTratamiento = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagritTratamientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +120,7 @@
             // 
             // txtTratamiento_Id
             // 
+            this.txtTratamiento_Id.Enabled = false;
             this.txtTratamiento_Id.Location = new System.Drawing.Point(171, 99);
             this.txtTratamiento_Id.Name = "txtTratamiento_Id";
             this.txtTratamiento_Id.Size = new System.Drawing.Size(206, 20);
@@ -147,7 +149,7 @@
             // 
             // btnInsertar
             // 
-            this.btnInsertar.Location = new System.Drawing.Point(85, 250);
+            this.btnInsertar.Location = new System.Drawing.Point(43, 250);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(74, 33);
             this.btnInsertar.TabIndex = 12;
@@ -157,7 +159,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(184, 250);
+            this.btnModificar.Location = new System.Drawing.Point(134, 250);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(76, 33);
             this.btnModificar.TabIndex = 13;
@@ -215,12 +217,13 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(279, 250);
+            this.btnEliminar.Location = new System.Drawing.Point(231, 250);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(81, 33);
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtBuscar
             // 
@@ -229,12 +232,23 @@
             this.txtBuscar.Size = new System.Drawing.Size(207, 20);
             this.txtBuscar.TabIndex = 21;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(336, 250);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 33);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SistemaVeterinara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1017, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscarTratamiento);
@@ -286,6 +300,7 @@
         private System.Windows.Forms.Button btnBuscarTratamiento;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button button1;
     }
 }
 

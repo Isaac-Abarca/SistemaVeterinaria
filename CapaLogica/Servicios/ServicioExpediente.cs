@@ -40,6 +40,9 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Veterinario_id", SqlDbType.Int);
             comando.Parameters["Veterinario_id"].Value = expediente.Veterinario_id1;
 
+            comando.Parameters.Add("Tratamiento_id", SqlDbType.Int);
+            comando.Parameters["Tratamiento_id"].Value = expediente.Tratamiento_id1;
+
             comando.Parameters.Add("Expediente_fecha", SqlDbType.Date);
             comando.Parameters["Expediente_fecha"].Value = expediente.Expediente_fecha1;
 
@@ -69,6 +72,9 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Veterinario_id", SqlDbType.Int);
             comando.Parameters["Veterinario_id"].Value = expediente.Veterinario_id1;
 
+            comando.Parameters.Add("Tratamiento_id", SqlDbType.Int);
+            comando.Parameters["Tratamiento_id"].Value = expediente.Tratamiento_id1;
+
             comando.Parameters.Add("Expediente_fecha", SqlDbType.Date);
             comando.Parameters["Expediente_fecha"].Value = expediente.Expediente_fecha1;
 
@@ -90,7 +96,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
             comando.CommandText ="ConsultarExpediente";
 
-            comando.Parameters.Add("Expediente_id", SqlDbType.Int);
+            comando.Parameters.Add("@Expediente_id", SqlDbType.Int);
             comando.Parameters["@Expediente_id"].Value = Expediente_id;
 
             DataSet dataSet = new DataSet();
@@ -113,6 +119,25 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             expediente = this.seleccionarInformacion(comando);
             DataTable miTabla = expediente.Tables[0];
             return miTabla;
+
+        }
+
+
+        public string inactivarExpediente(int Expediente_id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar Expediente");
+
+            comando.CommandText ="InactivarExpediente";
+
+            comando.Parameters.Add("@Expediente_id", SqlDbType.Int);
+            comando.Parameters["@Expediente_id"].Value = Expediente_id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la inactivacion de la Cita";
+            Console.WriteLine(respuesta);
+            return respuesta;
 
         }
 

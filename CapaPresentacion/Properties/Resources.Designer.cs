@@ -83,6 +83,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_circled_x_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-circled-x-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_folder_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-folder-24", resourceCulture);
@@ -96,6 +106,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap icons8_graph_report_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-graph-report-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_log_out_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-log-out-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap Minimize_Icon {
             get {
                 object obj = ResourceManager.GetObject("Minimize_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minimize_Icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Minimize_Icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

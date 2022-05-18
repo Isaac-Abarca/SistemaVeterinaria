@@ -40,6 +40,7 @@
             this.lblUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnCerrarSecion = new System.Windows.Forms.Button();
             this.btnCerrarChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPanel = new System.Windows.Forms.Panel();
@@ -62,11 +63,12 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 614);
+            this.panelMenu.Size = new System.Drawing.Size(220, 631);
             this.panelMenu.TabIndex = 0;
             // 
             // btnConfiguraciones
             // 
+            this.btnConfiguraciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfiguraciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConfiguraciones.FlatAppearance.BorderSize = 0;
             this.btnConfiguraciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -87,6 +89,7 @@
             // 
             // btnRegistros
             // 
+            this.btnRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistros.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRegistros.FlatAppearance.BorderSize = 0;
             this.btnRegistros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -107,6 +110,7 @@
             // 
             // btnReportes
             // 
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReportes.FlatAppearance.BorderSize = 0;
             this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -127,6 +131,7 @@
             // 
             // btnTratamiento
             // 
+            this.btnTratamiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTratamiento.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTratamiento.FlatAppearance.BorderSize = 0;
             this.btnTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -147,6 +152,7 @@
             // 
             // btnExpediente
             // 
+            this.btnExpediente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExpediente.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnExpediente.FlatAppearance.BorderSize = 0;
             this.btnExpediente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -167,6 +173,7 @@
             // 
             // btnCitas
             // 
+            this.btnCitas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCitas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCitas.FlatAppearance.BorderSize = 0;
             this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -230,6 +237,7 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.btnCerrarSecion);
             this.panelTitleBar.Controls.Add(this.btnCerrarChildForm);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -238,11 +246,27 @@
             this.panelTitleBar.Size = new System.Drawing.Size(964, 106);
             this.panelTitleBar.TabIndex = 1;
             // 
+            // btnCerrarSecion
+            // 
+            this.btnCerrarSecion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSecion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCerrarSecion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSecion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSecion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCerrarSecion.Image = global::CapaPresentacion.Properties.Resources.icons8_log_out_50;
+            this.btnCerrarSecion.Location = new System.Drawing.Point(889, 0);
+            this.btnCerrarSecion.Name = "btnCerrarSecion";
+            this.btnCerrarSecion.Size = new System.Drawing.Size(75, 106);
+            this.btnCerrarSecion.TabIndex = 7;
+            this.btnCerrarSecion.UseVisualStyleBackColor = true;
+            // 
             // btnCerrarChildForm
             // 
+            this.btnCerrarChildForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarChildForm.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCerrarChildForm.FlatAppearance.BorderSize = 0;
             this.btnCerrarChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarChildForm.Image = global::CapaPresentacion.Properties.Resources.icons8_circled_x_50;
             this.btnCerrarChildForm.Location = new System.Drawing.Point(0, 0);
             this.btnCerrarChildForm.Name = "btnCerrarChildForm";
             this.btnCerrarChildForm.Size = new System.Drawing.Size(75, 106);
@@ -267,19 +291,21 @@
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPanel.Location = new System.Drawing.Point(220, 106);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(964, 508);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(964, 525);
             this.panelDesktopPanel.TabIndex = 2;
             // 
             // FormMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1184, 614);
+            this.ClientSize = new System.Drawing.Size(1184, 631);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.MaximumSize = new System.Drawing.Size(1200, 670);
+            this.MinimumSize = new System.Drawing.Size(1200, 670);
             this.Name = "FormMainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormMainMenu_Load);
             this.panelMenu.ResumeLayout(false);
@@ -309,6 +335,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTipoUser;
         private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Button btnCerrarSecion;
     }
 }
 

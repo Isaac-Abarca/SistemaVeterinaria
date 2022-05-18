@@ -1,4 +1,5 @@
 ﻿using CapaLogica.LogiaNegocio;
+using Microsoft.OData.Edm;
 using SistemaVeterinaria.CapaConexion;
 using SistemaVeterinaria.CapaLogica.Servicios;
 using System;
@@ -20,11 +21,10 @@ namespace SistememaVeterinaria.CapaIntegracion
         {
         }
 
-        public string insertarCita(int cita_id,
-            int mascota_id,
+        public string insertarCita(int mascota_id,
             int veterinario_id,
-            DateTime cita_fecha,
-            DateTime cita_hora,
+            string cita_fecha,
+            string cita_hora,
             string cita_estado)
         {
 
@@ -51,6 +51,12 @@ namespace SistememaVeterinaria.CapaIntegracion
         {
             using (ServicioCita laCita = new ServicioCita())
                 return laCita.modificarCita(cita);
+        }
+
+        public string inactivarCita(int id)
+        {
+            using (ServicioCita laCita = new ServicioCita())
+                return laCita.InactivarCita(id);
         }
     }
 }

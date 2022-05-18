@@ -52,5 +52,11 @@ namespace SistemaVeterinaria.CapaIntegracion
             using (ServicioTratamiento elTratamiento = new ServicioTratamiento())
                 return elTratamiento.modificarTratamiento(tratamiento);
         }
+
+        public string inactivarTratamientos(int id)
+        {
+            using (ServicioTratamiento elTratamiento = new ServicioTratamiento())
+                return elTratamiento.InactivarTratamiento(id);
+        }
     }
 }

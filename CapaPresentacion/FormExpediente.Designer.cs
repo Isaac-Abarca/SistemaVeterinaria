@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGExpediente = new System.Windows.Forms.DataGridView();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -40,27 +40,28 @@
             this.lblVeterinarioId = new System.Windows.Forms.Label();
             this.lblMascotaId = new System.Windows.Forms.Label();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtVeterinario_id = new System.Windows.Forms.TextBox();
             this.txtMacota_id = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtTratamiento = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGExpediente)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGExpediente
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(375, 95);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(527, 304);
-            this.dataGridView1.TabIndex = 37;
+            this.dataGExpediente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGExpediente.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGExpediente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGExpediente.Location = new System.Drawing.Point(375, 95);
+            this.dataGExpediente.Name = "dataGExpediente";
+            this.dataGExpediente.ReadOnly = true;
+            this.dataGExpediente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGExpediente.Size = new System.Drawing.Size(527, 304);
+            this.dataGExpediente.TabIndex = 37;
+            this.dataGExpediente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGExpediente_CellClick);
             // 
             // btnBusqueda
             // 
@@ -81,7 +82,6 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Enabled = false;
             this.txtBusqueda.Location = new System.Drawing.Point(627, 55);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(146, 20);
@@ -96,6 +96,7 @@
             this.btnEliminar.TabIndex = 33;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -106,6 +107,7 @@
             this.btnModificar.TabIndex = 32;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnInsertar
             // 
@@ -116,6 +118,7 @@
             this.btnInsertar.TabIndex = 31;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // label2
             // 
@@ -166,13 +169,14 @@
             this.dtFecha.Size = new System.Drawing.Size(123, 20);
             this.dtFecha.TabIndex = 24;
             // 
-            // textBox4
+            // txtEstado
             // 
-            this.textBox4.Location = new System.Drawing.Point(155, 311);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(123, 20);
-            this.textBox4.TabIndex = 23;
-            this.textBox4.WordWrap = false;
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Location = new System.Drawing.Point(155, 311);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(123, 20);
+            this.txtEstado.TabIndex = 23;
+            this.txtEstado.WordWrap = false;
             // 
             // txtVeterinario_id
             // 
@@ -216,12 +220,12 @@
             this.label3.TabIndex = 39;
             this.label3.Text = "Tratamiento id";
             // 
-            // textBox1
+            // txtTratamiento
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 235);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 38;
+            this.txtTratamiento.Location = new System.Drawing.Point(155, 235);
+            this.txtTratamiento.Name = "txtTratamiento";
+            this.txtTratamiento.Size = new System.Drawing.Size(123, 20);
+            this.txtTratamiento.TabIndex = 38;
             // 
             // FormExpediente
             // 
@@ -229,8 +233,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtTratamiento);
+            this.Controls.Add(this.dataGExpediente);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.txtBusqueda);
@@ -242,7 +246,7 @@
             this.Controls.Add(this.lblVeterinarioId);
             this.Controls.Add(this.lblMascotaId);
             this.Controls.Add(this.dtFecha);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtVeterinario_id);
             this.Controls.Add(this.txtMacota_id);
             this.Controls.Add(this.txtID);
@@ -250,7 +254,7 @@
             this.Name = "FormExpediente";
             this.Text = "FormExpediente";
             this.Load += new System.EventHandler(this.FormExpediente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGExpediente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +262,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGExpediente;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
@@ -270,12 +274,12 @@
         private System.Windows.Forms.Label lblVeterinarioId;
         private System.Windows.Forms.Label lblMascotaId;
         private System.Windows.Forms.DateTimePicker dtFecha;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtVeterinario_id;
         private System.Windows.Forms.TextBox txtMacota_id;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTratamiento;
     }
 }

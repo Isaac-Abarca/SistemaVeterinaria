@@ -14,7 +14,7 @@ namespace MultiColoredModerUi
 {
     public partial class FormMainMenu : Form
     {
-        //Fields
+
         private Button currentButton;
         private Random random;
         private int tempIndex;
@@ -26,7 +26,6 @@ namespace MultiColoredModerUi
             btnCerrarChildForm.Visible = false;
         }
 
-        //Methods
         private Color SelectThemeColor()
         {
             try
@@ -111,7 +110,7 @@ namespace MultiColoredModerUi
 
         private void btnConsumidor_Click(object sender, EventArgs e)
         {
-            openChildForm(new SistemaVeterinara(), sender);
+            openChildForm(new FormTratamiento(), sender);
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
@@ -132,6 +131,8 @@ namespace MultiColoredModerUi
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
             LoadUserData();
+            this.MaximizeBox = false;
+            this.Text = "Menu Principal";
         }
 
         private void LoadUserData()
