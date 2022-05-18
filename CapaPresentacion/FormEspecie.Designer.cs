@@ -32,7 +32,7 @@
             this.lbllid = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagEspe = new System.Windows.Forms.DataGridView();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -41,7 +41,8 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.datagEspe)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,22 +75,24 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(165, 138);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(123, 20);
             this.txtId.TabIndex = 73;
             // 
-            // dataGridView1
+            // datagEspe
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(356, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(527, 304);
-            this.dataGridView1.TabIndex = 71;
+            this.datagEspe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagEspe.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.datagEspe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagEspe.Location = new System.Drawing.Point(356, 81);
+            this.datagEspe.Name = "datagEspe";
+            this.datagEspe.ReadOnly = true;
+            this.datagEspe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagEspe.Size = new System.Drawing.Size(527, 304);
+            this.datagEspe.TabIndex = 71;
+            this.datagEspe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagEspe_CellClick);
             // 
             // btnBusqueda
             // 
@@ -125,6 +128,7 @@
             this.btnEliminar.TabIndex = 67;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -135,6 +139,7 @@
             this.btnModificar.TabIndex = 66;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnInsertar
             // 
@@ -145,6 +150,7 @@
             this.btnInsertar.TabIndex = 65;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // label2
             // 
@@ -158,11 +164,23 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(165, 215);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(123, 20);
             this.txtEstado.TabIndex = 61;
             this.txtEstado.WordWrap = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.Location = new System.Drawing.Point(143, 336);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 35);
+            this.button1.TabIndex = 77;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormEspecie
             // 
@@ -170,11 +188,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(926, 466);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbllid);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagEspe);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.txtBusqueda);
@@ -185,7 +204,8 @@
             this.Controls.Add(this.txtEstado);
             this.Name = "FormEspecie";
             this.Text = "FormEspecie";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormEspecie_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.datagEspe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,7 +217,7 @@
         private System.Windows.Forms.Label lbllid;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagEspe;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
@@ -206,5 +226,6 @@
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -39,7 +39,7 @@ namespace CapaLogica.Servicios
             comando.Parameters.Add("Especie_descripcion", SqlDbType.VarChar);
             comando.Parameters["Especie_descripcion"].Value = especie.Especie_descripcion;
 
-            comando.Parameters.Add("Especie_estado", SqlDbType.Int);
+            comando.Parameters.Add("Especie_estado", SqlDbType.VarChar);
             comando.Parameters["Especie_estado"].Value = especie.Especie_estado;
 
             respuesta = this.ejecutaSentencia(comando);
@@ -62,7 +62,7 @@ namespace CapaLogica.Servicios
             comando.Parameters.Add("Especie_descripcion", SqlDbType.VarChar);
             comando.Parameters["Especie_descripcion"].Value = especie.Especie_descripcion;
 
-            comando.Parameters.Add("Especie_estado", SqlDbType.Int);
+            comando.Parameters.Add("Especie_estado", SqlDbType.VarChar);
             comando.Parameters["Especie_estado"].Value = especie.Especie_estado;
 
             
@@ -82,7 +82,7 @@ namespace CapaLogica.Servicios
 
             comando.CommandText ="ConsultarEspecie";
 
-            comando.Parameters.Add("Especie_id", SqlDbType.Int);
+            comando.Parameters.Add("@Especie_id", SqlDbType.Int);
             comando.Parameters["@Especie_id"].Value = Especie_id;
 
             DataSet dataSet = new DataSet();
@@ -90,6 +90,25 @@ namespace CapaLogica.Servicios
             dataSet = this.seleccionarInformacion(comando);
             this.cerrarConexion();
             return dataSet;
+
+        }
+
+        public string inactivarEspecie(int id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar Especie");
+
+            comando.CommandText ="InactivarEspecie";
+
+            comando.Parameters.Add("@Especie_id", SqlDbType.Int);
+            comando.Parameters["@Especie_id"].Value = id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la inactivacion de la Especie";
+            Console.WriteLine(respuesta);
+
+            return respuesta;
 
         }
 

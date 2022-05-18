@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblIdMedicamento = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGVet = new System.Windows.Forms.DataGridView();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -47,7 +47,8 @@
             this.lbllid = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIdMedicamento
@@ -60,17 +61,18 @@
             this.lblIdMedicamento.TabIndex = 53;
             this.lblIdMedicamento.Text = "Telefono:";
             // 
-            // dataGridView1
+            // dataGVet
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(324, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(527, 304);
-            this.dataGridView1.TabIndex = 52;
+            this.dataGVet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGVet.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGVet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVet.Location = new System.Drawing.Point(324, 93);
+            this.dataGVet.Name = "dataGVet";
+            this.dataGVet.ReadOnly = true;
+            this.dataGVet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGVet.Size = new System.Drawing.Size(527, 304);
+            this.dataGVet.TabIndex = 52;
+            this.dataGVet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGVet_CellClick);
             // 
             // btnBusqueda
             // 
@@ -100,32 +102,35 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnEliminar.Location = new System.Drawing.Point(225, 329);
+            this.btnEliminar.Location = new System.Drawing.Point(176, 329);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(79, 35);
             this.btnEliminar.TabIndex = 48;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnModificar.Location = new System.Drawing.Point(115, 329);
+            this.btnModificar.Location = new System.Drawing.Point(91, 329);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(92, 35);
+            this.btnModificar.Size = new System.Drawing.Size(79, 35);
             this.btnModificar.TabIndex = 47;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnInsertar
             // 
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnInsertar.Location = new System.Drawing.Point(19, 329);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(75, 35);
+            this.btnInsertar.Size = new System.Drawing.Size(66, 35);
             this.btnInsertar.TabIndex = 46;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // label2
             // 
@@ -146,7 +151,6 @@
             this.lbldireccion.Size = new System.Drawing.Size(75, 18);
             this.lbldireccion.TabIndex = 44;
             this.lbldireccion.Text = "Direccion:";
-            this.lbldireccion.Click += new System.EventHandler(this.lblMedicamento_dosis_Click);
             // 
             // lblNombre
             // 
@@ -157,10 +161,10 @@
             this.lblNombre.Size = new System.Drawing.Size(62, 18);
             this.lblNombre.TabIndex = 43;
             this.lblNombre.Text = "Nombre";
-            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // txtEstado
             // 
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(148, 280);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(123, 20);
@@ -183,7 +187,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(148, 190);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(123, 20);
@@ -218,11 +221,22 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(148, 130);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(123, 20);
             this.txtId.TabIndex = 54;
-            this.txtId.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.Location = new System.Drawing.Point(115, 381);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 35);
+            this.button1.TabIndex = 58;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormVeterinario
             // 
@@ -230,12 +244,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(874, 476);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbllid);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblIdMedicamento);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGVet);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.txtBusqueda);
@@ -251,7 +266,8 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "FormVeterinario";
             this.Text = "FormVeterinario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormVeterinario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +276,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblIdMedicamento;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGVet;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
@@ -278,5 +294,6 @@
         private System.Windows.Forms.Label lbllid;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button button1;
     }
 }

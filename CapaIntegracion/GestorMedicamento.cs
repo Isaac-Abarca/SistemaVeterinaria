@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CapaIntegracion
 {
-    internal class GestorMedicamento : servicio, IDisposable
+    public class GestorMedicamento : servicio, IDisposable
     {
         public GestorMedicamento()
         {
@@ -47,6 +47,12 @@ namespace CapaIntegracion
         {
             using (ServicioMedicamento Medicamento = new ServicioMedicamento())
                 return Medicamento.modificarMedicamento(medicamento);
+        }
+
+        public string inactivarMedicamento(int id)
+        {
+            using (ServicioMedicamento Medicamento = new ServicioMedicamento())
+                return Medicamento.inactivarMedicamento(id);
         }
     }
 }

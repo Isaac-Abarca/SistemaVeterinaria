@@ -29,7 +29,7 @@ namespace CapaLogica.Servicios
         public string insetarVeterinario(Veterinario veterinario)
         {
             comando = new SqlCommand();
-            Console.WriteLine("GESTOR INSERTAR MEDICAMENTO");
+            Console.WriteLine("GESTOR INSERTAR Veterinario");
 
             comando.CommandText ="InsertarVeterinario";
 
@@ -58,9 +58,9 @@ namespace CapaLogica.Servicios
         public string modificarVeterinario(Veterinario veterinario)
         {
             comando = new SqlCommand();
-            Console.WriteLine("GESTOR MODIFICAR MEDICAMENTO");
+            Console.WriteLine("GESTOR MODIFICAR Veterinario");
 
-            comando.CommandText ="ModificarMedicamento";
+            comando.CommandText ="ModificarVeterinario";
 
             comando.Parameters.Add("Veterinario_id", SqlDbType.Int);
             comando.Parameters["Veterinario_id"].Value = veterinario.Veterinario_id;
@@ -95,7 +95,7 @@ namespace CapaLogica.Servicios
 
             comando.CommandText ="ConsultarVeterinario";
 
-            comando.Parameters.Add("Veterinario_id", SqlDbType.Int);
+            comando.Parameters.Add("@Veterinario_id", SqlDbType.Int);
             comando.Parameters["@Veterinario_id"].Value = Veterinario_id;
 
             DataSet dataSet = new DataSet();
@@ -118,6 +118,24 @@ namespace CapaLogica.Servicios
             Veterinario = this.seleccionarInformacion(comando);
             DataTable miTabla = Veterinario.Tables[0];
             return miTabla;
+
+        }
+
+        public string inactivarVeterinario(int id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar Veterinario");
+
+            comando.CommandText ="InactivarVeterinario";
+
+            comando.Parameters.Add("@Veterinario_id", SqlDbType.Int);
+            comando.Parameters["@Veterinario_id"].Value = id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la inactivacion del Veterinario";
+            Console.WriteLine(respuesta);
+            return respuesta;
 
         }
     }

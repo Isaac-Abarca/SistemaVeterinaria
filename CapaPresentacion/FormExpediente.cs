@@ -39,8 +39,6 @@ namespace CapaPresentacion
                 {
                     if (txtMacota_id.Text != "" && txtVeterinario_id.Text != "" && txtTratamiento.Text != "")
                     {
-
-
                         expe.insertarExpediente(Convert.ToInt32(txtMacota_id.Text), Convert.ToInt32(txtVeterinario_id.Text),int.Parse(txtTratamiento.Text),
                             dtFecha.Text,"A");
                         cargarCargarGrid();
@@ -165,6 +163,11 @@ namespace CapaPresentacion
             }
             alerta(mss);
 
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarTxt();
         }
     }
 }

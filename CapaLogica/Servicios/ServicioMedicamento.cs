@@ -83,7 +83,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
             comando.CommandText ="ConsultarMedicamento";
 
-            comando.Parameters.Add("Medicamento_id", SqlDbType.Int);
+            comando.Parameters.Add("@Medicamento_id", SqlDbType.Int);
             comando.Parameters["@Medicamento_id"].Value = Medicamento_id;
 
             DataSet dataSet = new DataSet();
@@ -106,6 +106,24 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             medicamento = this.seleccionarInformacion(comando);
             DataTable miTabla = medicamento.Tables[0];
             return miTabla;
+
+        }
+
+        public string inactivarMedicamento(int id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar Medicamento");
+
+            comando.CommandText ="InactivarMedicamento";
+
+            comando.Parameters.Add("@Medicamento_id", SqlDbType.Int);
+            comando.Parameters["@Medicamento_id"].Value = id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la inactivacion de la Cita";
+            Console.WriteLine(respuesta);
+            return respuesta;
 
         }
     }

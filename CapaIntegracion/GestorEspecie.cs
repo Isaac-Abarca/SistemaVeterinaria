@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CapaIntegracion
 {
-    internal class GestorEspecie : servicio, IDisposable
+    public class GestorEspecie : servicio, IDisposable
     {
         public GestorEspecie()
         {
@@ -45,6 +45,12 @@ namespace CapaIntegracion
         {
             using (ServicioEspecie Especie = new ServicioEspecie())
                 return Especie.modificarEspecie(especie);
+        }
+
+        public string inactivarEspecie(int id)
+        {
+            using (ServicioEspecie Especie = new ServicioEspecie())
+                return Especie.inactivarEspecie(id);
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CapaIntegracion
 {
-    internal class GestorVeterinario : servicio, IDisposable
+    public class GestorVeterinario : servicio, IDisposable
     {
         public GestorVeterinario()
         {
@@ -45,10 +45,16 @@ namespace CapaIntegracion
                 return Veterinario.ConsultarVeterinario(Veterinario_id);
         }
 
-        public string modificarMascota(Veterinario veterinario)
+        public string modificarVeterinario(Veterinario veterinario)
         {
             using (ServicioVeterinario Veterinario = new ServicioVeterinario())
                 return Veterinario.modificarVeterinario(veterinario);
         }
+        public string inactivarVeterinario(int id)
+        {
+            using (ServicioVeterinario Veterinario = new ServicioVeterinario())
+                return Veterinario.inactivarVeterinario(id);
+        }
+
     }
 }
