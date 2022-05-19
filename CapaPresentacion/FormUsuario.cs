@@ -17,7 +17,6 @@ namespace CapaPresentacion
         DataSet dsDatos = new DataSet();
         DataTable dtDatos = new DataTable();
         bool listoModificar = false;
-        int tableId;
         public FormUsuario()
         {
             InitializeComponent();
@@ -31,11 +30,9 @@ namespace CapaPresentacion
 
         private void cargarComboTratamiento()
         {
-            cbTipo.Items.Add("     ");
             cbTipo.Items.Add("Administrador");
             cbTipo.Items.Add("Secretario");
-
-
+            cbTipo.SelectedIndex = -1;
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
@@ -44,13 +41,12 @@ namespace CapaPresentacion
             {
                 if (listoModificar == false)
                 {
-                    if (txtNombre.Text != "" &&  txtContrasenna.Text != "" && cbTipo.Text != "     " && cbTipo.Text != "")
+                    if (txtNombre.Text != "" &&  txtContrasenna.Text != "" && cbTipo.SelectedIndex != -1)
                     {
                         alerta(cbTipo.Text);
                         usuario.insertarUsuario((txtNombre.Text), (txtContrasenna.Text),
                             cbTipo.Text,"A");
                         cargarCargarGrid();
-                        //cargarComboTratamiento();
                         limpiarTxt();
                     }
                     else

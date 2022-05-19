@@ -63,8 +63,9 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 631);
+            this.panelMenu.Size = new System.Drawing.Size(220, 670);
             this.panelMenu.TabIndex = 0;
+            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // btnConfiguraciones
             // 
@@ -204,6 +205,7 @@
             this.panelLogo.Size = new System.Drawing.Size(220, 112);
             this.panelLogo.TabIndex = 0;
             this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
+            this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             // 
             // lblTipoUser
             // 
@@ -243,8 +245,9 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(964, 106);
+            this.panelTitleBar.Size = new System.Drawing.Size(980, 106);
             this.panelTitleBar.TabIndex = 1;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
             // btnCerrarSecion
             // 
@@ -254,11 +257,12 @@
             this.btnCerrarSecion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSecion.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCerrarSecion.Image = global::CapaPresentacion.Properties.Resources.icons8_log_out_50;
-            this.btnCerrarSecion.Location = new System.Drawing.Point(889, 0);
+            this.btnCerrarSecion.Location = new System.Drawing.Point(905, 0);
             this.btnCerrarSecion.Name = "btnCerrarSecion";
             this.btnCerrarSecion.Size = new System.Drawing.Size(75, 106);
             this.btnCerrarSecion.TabIndex = 7;
             this.btnCerrarSecion.UseVisualStyleBackColor = true;
+            this.btnCerrarSecion.Click += new System.EventHandler(this.btnCerrarSecion_Click);
             // 
             // btnCerrarChildForm
             // 
@@ -280,7 +284,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(392, 49);
+            this.lblTitle.Location = new System.Drawing.Point(400, 49);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(74, 25);
             this.lblTitle.TabIndex = 0;
@@ -291,17 +295,19 @@
             this.panelDesktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPanel.Location = new System.Drawing.Point(220, 106);
             this.panelDesktopPanel.Name = "panelDesktopPanel";
-            this.panelDesktopPanel.Size = new System.Drawing.Size(964, 525);
+            this.panelDesktopPanel.Size = new System.Drawing.Size(980, 564);
             this.panelDesktopPanel.TabIndex = 2;
+            this.panelDesktopPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktopPanel_Paint);
             // 
             // FormMainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1184, 631);
+            this.ClientSize = new System.Drawing.Size(1200, 670);
             this.Controls.Add(this.panelDesktopPanel);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1200, 670);
             this.MinimumSize = new System.Drawing.Size(1200, 670);
             this.Name = "FormMainMenu";

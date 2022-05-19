@@ -30,8 +30,6 @@
         {
             this.lblid = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtMacota_id = new System.Windows.Forms.TextBox();
-            this.txtVeterinario_id = new System.Windows.Forms.TextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.dtHora = new System.Windows.Forms.DateTimePicker();
@@ -48,6 +46,8 @@
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.dtCita = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.cbMascota = new System.Windows.Forms.ComboBox();
+            this.cbVeterinario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtCita)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,20 +68,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(123, 20);
             this.txtID.TabIndex = 1;
-            // 
-            // txtMacota_id
-            // 
-            this.txtMacota_id.Location = new System.Drawing.Point(166, 164);
-            this.txtMacota_id.Name = "txtMacota_id";
-            this.txtMacota_id.Size = new System.Drawing.Size(123, 20);
-            this.txtMacota_id.TabIndex = 2;
-            // 
-            // txtVeterinario_id
-            // 
-            this.txtVeterinario_id.Location = new System.Drawing.Point(166, 205);
-            this.txtVeterinario_id.Name = "txtVeterinario_id";
-            this.txtVeterinario_id.Size = new System.Drawing.Size(123, 20);
-            this.txtVeterinario_id.TabIndex = 3;
             // 
             // txtEstado
             // 
@@ -241,12 +227,30 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // cbMascota
+            // 
+            this.cbMascota.FormattingEnabled = true;
+            this.cbMascota.Location = new System.Drawing.Point(166, 164);
+            this.cbMascota.Name = "cbMascota";
+            this.cbMascota.Size = new System.Drawing.Size(123, 21);
+            this.cbMascota.TabIndex = 45;
+            // 
+            // cbVeterinario
+            // 
+            this.cbVeterinario.FormattingEnabled = true;
+            this.cbVeterinario.Location = new System.Drawing.Point(166, 202);
+            this.cbVeterinario.Name = "cbVeterinario";
+            this.cbVeterinario.Size = new System.Drawing.Size(123, 21);
+            this.cbVeterinario.TabIndex = 44;
+            // 
             // FormCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1015, 487);
+            this.Controls.Add(this.cbMascota);
+            this.Controls.Add(this.cbVeterinario);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dtCita);
             this.Controls.Add(this.btnBusqueda);
@@ -263,8 +267,6 @@
             this.Controls.Add(this.dtHora);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.txtVeterinario_id);
-            this.Controls.Add(this.txtMacota_id);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblid);
             this.Name = "FormCitas";
@@ -280,8 +282,6 @@
 
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtMacota_id;
-        private System.Windows.Forms.TextBox txtVeterinario_id;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.DateTimePicker dtHora;
@@ -298,5 +298,7 @@
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.DataGridView dtCita;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbMascota;
+        private System.Windows.Forms.ComboBox cbVeterinario;
     }
 }

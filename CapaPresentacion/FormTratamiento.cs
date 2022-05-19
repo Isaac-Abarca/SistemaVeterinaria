@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaIntegracion;
 using SistemaVeterinaria.CapaIntegracion;
 using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 
@@ -29,13 +30,11 @@ namespace CapaPresentacion
             {
                 if (listoModificar == false)
                 {
-                    if (txtMedicamento_id.Text != "" &&  txtTratamiento_dosis.Text != "" &&txtTratamiento_observaciones.Text != "")
+                    if (txtTratamiento_dosis.Text != "" &&txtTratamiento_observaciones.Text != "")
                     {
-                        tratamiento.insertarTratamiento(Convert.ToInt32(txtMedicamento_id.Text), (txtTratamiento_dosis.Text), 
-                            txtTratamiento_observaciones.Text,
-                        "A");
+                        tratamiento.insertarTratamiento(Convert.ToInt32(cbMedicamento_id.SelectedValue), (txtTratamiento_dosis.Text), 
+                            txtTratamiento_observaciones.Text,"A");
                         cargarCargarGrid();
-                        cargarComboTratamiento();
                         limpiarTxt();
                     }
                     else
@@ -53,8 +52,9 @@ namespace CapaPresentacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cbMedicamento_id.SelectedIndex = -1;
             cargarCargarGrid();
-            cargarComboTratamiento();
+            cargarComboMedicamento();
         }
 
         private void cargarCargarGrid()
@@ -67,13 +67,14 @@ namespace CapaPresentacion
                
         }
 
-        private void cargarComboTratamiento()
+        private void cargarComboMedicamento()
         {
-            using (GestorTratamiento tratamiento = new GestorTratamiento()) 
+            using (GestorMedicamento medicamento = new GestorMedicamento()) 
             {
-                cbxTratamiento.DataSource = tratamiento.listarTratamientos();
-                cbxTratamiento.ValueMember = "Tratamiento_id";
-                cbxTratamiento.DisplayMember = "Tratamiento_dosis";
+                cbMedicamento_id.DataSource = medicamento.listarMedicamento();
+                cbMedicamento_id.ValueMember = "Medicamento_id";
+                cbMedicamento_id.DisplayMember = "Medicamento_nombre";
+                cbMedicamento_id.SelectedIndex = -1;
             }
         }
 
@@ -92,9 +93,9 @@ namespace CapaPresentacion
         private void cargarDatosTratamiento()
         {
             listoModificar = true;
-            txtTratamiento_Id .Text = this.dtTratamiento.Rows[0]["Tratamiento_id"].ToString();
-            txtMedicamento_id.Text = this.dtTratamiento.Rows[0]["Medicamento_id"].ToString();
+            txtTratamiento_Id.Text = this.dtTratamiento.Rows[0]["Tratamiento_id"].ToString();
             txtTratamiento_dosis.Text = this.dtTratamiento.Rows[0]["Tratamiento_dosis"].ToString();
+            cbMedicamento_id.SelectedValue = this.dtTratamiento.Rows[0]["Medicamento_id"].ToString();
             txtTratamiento_observaciones.Text = this.dtTratamiento.Rows[0]["Tratamiento_observaciones"].ToString();
         }
 
@@ -129,7 +130,7 @@ namespace CapaPresentacion
             {
                 using (GestorTratamiento tratamiento = new GestorTratamiento())
                 {
-                    Tratamiento tratamiento1 = new Tratamiento(int.Parse(txtTratamiento_Id.Text), int.Parse(txtMedicamento_id.Text), (txtTratamiento_dosis.Text), txtTratamiento_observaciones.Text,
+                    Tratamiento tratamiento1 = new Tratamiento(int.Parse(txtTratamiento_Id.Text), Convert.ToInt32(cbMedicamento_id.SelectedValue), (txtTratamiento_dosis.Text), txtTratamiento_observaciones.Text,
                          "A");
                     tratamiento.modificarTratamientos(tratamiento1);
                     cargarCargarGrid();
@@ -173,7 +174,7 @@ namespace CapaPresentacion
         public void limpiarTxt()
         {
             listoModificar = false;
-            txtMedicamento_id.Clear();
+            cbMedicamento_id.SelectedIndex = -1;
             txtTratamiento_dosis.Clear();
             txtTratamiento_Id.Clear();
             txtTratamiento_observaciones.Clear();
@@ -189,5 +190,7 @@ namespace CapaPresentacion
         {
             limpiarTxt();
         }
+
+        
     }
 }

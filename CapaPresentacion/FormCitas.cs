@@ -1,4 +1,5 @@
-﻿using CapaLogica.LogiaNegocio;
+﻿using CapaIntegracion;
+using CapaLogica.LogiaNegocio;
 using Microsoft.OData.Edm;
 using SistememaVeterinaria.CapaIntegracion;
 using System;
@@ -29,19 +30,42 @@ namespace CapaPresentacion
         private void FormCitas_Load(object sender, EventArgs e)
         {
             cargarCargarGrid();
+            cargarComboVeterinario();
+            cargarComboMascota();
         }
 
+        
+
+        private void cargarComboVeterinario()
+        {
+            using (GestorVeterinario Veterinario = new GestorVeterinario())
+            {
+                cbVeterinario.DataSource = Veterinario.listarVeterinario();
+                cbVeterinario.ValueMember = "Veterinario_id";
+                cbVeterinario.DisplayMember = "Veterinario_nombre";
+                cbVeterinario.SelectedIndex = -1;
+            }
+        }
+
+        private void cargarComboMascota()
+        {
+            using (GestorMascota Mascota = new GestorMascota())
+            {
+                cbMascota.DataSource = Mascota.listarMascota();
+                cbMascota.ValueMember = "Mascota_id";
+                cbMascota.DisplayMember = "Mascota_nombre";
+                cbMascota.SelectedIndex = -1;
+            }
+        }
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             using (GestorCita cita = new GestorCita())
             {
                 if (listoModificar == false)
                 {
-                    if (txtMacota_id.Text != "" && txtVeterinario_id.Text != "")
+                    if (cbMascota.SelectedIndex != -1 &&  cbVeterinario.SelectedIndex != -1)
                     {
-                        
-
-                        cita.insertarCita(Convert.ToInt32(txtMacota_id.Text), Convert.ToInt32(txtVeterinario_id.Text),
+                        cita.insertarCita(Convert.ToInt32(cbMascota.SelectedValue), Convert.ToInt32(cbVeterinario.SelectedValue),
                             dtFecha.Text, dtHora.Text, "A");
                         cargarCargarGrid();
                         //cargarComboTratamiento();
@@ -66,7 +90,7 @@ namespace CapaPresentacion
             {
                 using (GestorCita Cita = new GestorCita())
                 {
-                    Cita cita1 = new Cita(this.tableCitaId, Convert.ToInt32(txtMacota_id.Text), Convert.ToInt32(txtVeterinario_id.Text),
+                    Cita cita1 = new Cita(this.tableCitaId, Convert.ToInt32(cbMascota.SelectedValue), Convert.ToInt32(cbVeterinario.SelectedValue),
                             dtFecha.Text, dtHora.Text, "A");
                     Cita.modificarCita(cita1);
                     cargarCargarGrid();
@@ -81,18 +105,18 @@ namespace CapaPresentacion
 
         public void limpiarTxt()
         {
+            cbMascota.SelectedIndex = -1;
+            cbVeterinario.SelectedIndex = -1;
             listoModificar = false;
             txtID.Clear();
-            txtMacota_id.Clear();
-            txtVeterinario_id.Clear();
             txtEstado.Clear();
         }
         private void cargarDatosTratamiento()
         {
             listoModificar = true;
             txtID.Text = this.tableCitaId+"";
-            txtMacota_id.Text = this.dtCitas.Rows[0]["Mascota_id"].ToString();
-            txtVeterinario_id.Text = this.dtCitas.Rows[0]["Veterinario_id"].ToString();
+            cbMascota.SelectedValue = this.dtCitas.Rows[0]["Mascota_id"].ToString();
+            cbVeterinario.SelectedValue = this.dtCitas.Rows[0]["Veterinario_id"].ToString();
             dtFecha.Text = this.dtCitas.Rows[0]["Cita_fecha"].ToString();
             dtHora.Text = this.dtCitas.Rows[0]["Cita_hora"].ToString();
             txtEstado.Text = this.dtCitas.Rows[0]["Cita_estado"].ToString();

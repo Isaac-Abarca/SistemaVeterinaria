@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaIntegracion;
+using SistemaVeterinaria.CapaIntegracion;
 using SistemaVeterinaria.CapaLogica.LogiaNegocio;
 using SistememaVeterinaria.CapaIntegracion;
 
@@ -28,7 +29,43 @@ namespace CapaPresentacion
 
         private void FormExpediente_Load(object sender, EventArgs e)
         {
+            cargarComboTratamiento();
+            cargarComboVeterinario();
+            cargarComboMascota();
             cargarCargarGrid();
+        }
+
+        private void cargarComboVeterinario()
+        {
+            using (GestorVeterinario Veterinario = new GestorVeterinario())
+            {
+                cbVeterinario.DataSource = Veterinario.listarVeterinario();
+                cbVeterinario.ValueMember = "Veterinario_id";
+                cbVeterinario.DisplayMember = "Veterinario_nombre";
+                cbVeterinario.SelectedIndex = -1;
+            }
+        }
+
+        private void cargarComboTratamiento()
+        {
+            using (GestorTratamiento Tratamiento = new GestorTratamiento())
+            {
+                cbTrtamiento.DataSource = Tratamiento.listarTratamientos();
+                cbTrtamiento.ValueMember = "Tratamiento_id";
+                cbTrtamiento.DisplayMember = "Tratamiento_id";
+                cbTrtamiento.SelectedIndex = -1;
+            }
+        }
+
+        private void cargarComboMascota()
+        {
+            using (GestorMascota Mascota = new GestorMascota())
+            {
+                cbMascota.DataSource = Mascota.listarMascota();
+                cbMascota.ValueMember = "Mascota_id";
+                cbMascota.DisplayMember = "Mascota_nombre";
+                cbMascota.SelectedIndex = -1;
+            }
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
@@ -37,10 +74,10 @@ namespace CapaPresentacion
             {
                 if (listoModificar == false)
                 {
-                    if (txtMacota_id.Text != "" && txtVeterinario_id.Text != "" && txtTratamiento.Text != "")
+                    if (cbMascota.SelectedIndex  != -1 && cbTrtamiento.SelectedIndex != -1  && cbVeterinario .SelectedIndex != -1)
                     {
-                        expe.insertarExpediente(Convert.ToInt32(txtMacota_id.Text), Convert.ToInt32(txtVeterinario_id.Text),int.Parse(txtTratamiento.Text),
-                            dtFecha.Text,"A");
+                        expe.insertarExpediente(Convert.ToInt32(cbMascota.SelectedValue), Convert.ToInt32(cbVeterinario.SelectedValue),
+                            Convert.ToInt32(cbTrtamiento.SelectedValue),dtFecha.Text,"A");
                         cargarCargarGrid();
                         //cargarComboTratamiento();
                         limpiarTxt();
@@ -63,9 +100,9 @@ namespace CapaPresentacion
         {
             listoModificar = true;
             txtID.Text = this.tableExpeId+"";
-            txtMacota_id.Text = this.dtExpediente.Rows[0]["Mascota_id"].ToString();
-            txtVeterinario_id.Text = this.dtExpediente.Rows[0]["Veterinario_id"].ToString();
-            txtTratamiento.Text = this.dtExpediente.Rows[0]["Tratamiento_id"].ToString();
+            cbMascota.SelectedValue  = this.dtExpediente.Rows[0]["Mascota_id"].ToString();
+            cbVeterinario.SelectedValue = this.dtExpediente.Rows[0]["Veterinario_id"].ToString();
+            cbTrtamiento.SelectedValue = this.dtExpediente.Rows[0]["Tratamiento_id"].ToString();
             dtFecha.Text = this.dtExpediente.Rows[0]["Expediente_fecha"].ToString();
             txtEstado.Text = this.dtExpediente.Rows[0]["Expediente_estado"].ToString();
         }
@@ -88,9 +125,9 @@ namespace CapaPresentacion
         {
             listoModificar = false;
             txtID.Clear();
-            txtMacota_id.Clear();
-            txtVeterinario_id.Clear();
-            txtTratamiento.Clear();
+            cbMascota.SelectedIndex = -1;
+            cbTrtamiento.SelectedIndex = -1;
+            cbVeterinario.SelectedIndex = -1;
             txtEstado.Clear();
         }
 
@@ -100,8 +137,8 @@ namespace CapaPresentacion
             {
                 using (GestorExpediente expe = new GestorExpediente())
                 {
-                    Expediente expediente = new Expediente(this.tableExpeId, Convert.ToInt32(txtMacota_id.Text), Convert.ToInt32(txtVeterinario_id.Text), int.Parse(txtTratamiento.Text),
-                            dtFecha.Text, "A");
+                    Expediente expediente = new Expediente(this.tableExpeId, Convert.ToInt32(cbMascota.SelectedValue), Convert.ToInt32(cbVeterinario.SelectedValue),
+                            Convert.ToInt32(cbTrtamiento.SelectedValue), dtFecha.Text, "A");
                     expe.modificarExpediente(expediente);
                     cargarCargarGrid();
                     limpiarTxt();

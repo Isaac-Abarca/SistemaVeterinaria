@@ -44,6 +44,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.lblIdMedicamento = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGMedicamento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -200,11 +201,23 @@
             this.lblIdMedicamento.Text = "Medicamento id";
             this.lblIdMedicamento.Click += new System.EventHandler(this.lblIdMedicamento_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.Location = new System.Drawing.Point(114, 363);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 35);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 474);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblIdMedicamento);
             this.Controls.Add(this.dataGMedicamento);
             this.Controls.Add(this.btnBusqueda);
@@ -248,5 +261,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.Label lblIdMedicamento;
+        private System.Windows.Forms.Button button1;
     }
 }

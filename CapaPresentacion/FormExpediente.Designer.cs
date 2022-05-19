@@ -40,14 +40,14 @@
             this.lblMascotaId = new System.Windows.Forms.Label();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.txtEstado = new System.Windows.Forms.TextBox();
-            this.txtVeterinario_id = new System.Windows.Forms.TextBox();
-            this.txtMacota_id = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTratamiento = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.cbTrtamiento = new System.Windows.Forms.ComboBox();
+            this.cbVeterinario = new System.Windows.Forms.ComboBox();
+            this.cbMascota = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGExpediente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,20 +168,6 @@
             this.txtEstado.TabIndex = 23;
             this.txtEstado.WordWrap = false;
             // 
-            // txtVeterinario_id
-            // 
-            this.txtVeterinario_id.Location = new System.Drawing.Point(198, 188);
-            this.txtVeterinario_id.Name = "txtVeterinario_id";
-            this.txtVeterinario_id.Size = new System.Drawing.Size(123, 20);
-            this.txtVeterinario_id.TabIndex = 22;
-            // 
-            // txtMacota_id
-            // 
-            this.txtMacota_id.Location = new System.Drawing.Point(198, 147);
-            this.txtMacota_id.Name = "txtMacota_id";
-            this.txtMacota_id.Size = new System.Drawing.Size(123, 20);
-            this.txtMacota_id.TabIndex = 21;
-            // 
             // txtID
             // 
             this.txtID.Enabled = false;
@@ -210,13 +196,6 @@
             this.label3.TabIndex = 39;
             this.label3.Text = "Tratamiento id";
             // 
-            // txtTratamiento
-            // 
-            this.txtTratamiento.Location = new System.Drawing.Point(198, 224);
-            this.txtTratamiento.Name = "txtTratamiento";
-            this.txtTratamiento.Size = new System.Drawing.Size(123, 20);
-            this.txtTratamiento.TabIndex = 38;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -239,14 +218,40 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // cbTrtamiento
+            // 
+            this.cbTrtamiento.FormattingEnabled = true;
+            this.cbTrtamiento.Location = new System.Drawing.Point(198, 225);
+            this.cbTrtamiento.Name = "cbTrtamiento";
+            this.cbTrtamiento.Size = new System.Drawing.Size(123, 21);
+            this.cbTrtamiento.TabIndex = 41;
+            // 
+            // cbVeterinario
+            // 
+            this.cbVeterinario.FormattingEnabled = true;
+            this.cbVeterinario.Location = new System.Drawing.Point(198, 185);
+            this.cbVeterinario.Name = "cbVeterinario";
+            this.cbVeterinario.Size = new System.Drawing.Size(123, 21);
+            this.cbVeterinario.TabIndex = 42;
+            // 
+            // cbMascota
+            // 
+            this.cbMascota.FormattingEnabled = true;
+            this.cbMascota.Location = new System.Drawing.Point(198, 147);
+            this.cbMascota.Name = "cbMascota";
+            this.cbMascota.Size = new System.Drawing.Size(123, 21);
+            this.cbMascota.TabIndex = 43;
+            // 
             // FormExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 447);
+            this.Controls.Add(this.cbMascota);
+            this.Controls.Add(this.cbVeterinario);
+            this.Controls.Add(this.cbTrtamiento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtTratamiento);
             this.Controls.Add(this.dataGExpediente);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.cmbBuscar);
@@ -260,8 +265,6 @@
             this.Controls.Add(this.lblMascotaId);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.txtVeterinario_id);
-            this.Controls.Add(this.txtMacota_id);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblid);
             this.Name = "FormExpediente";
@@ -287,13 +290,13 @@
         private System.Windows.Forms.Label lblMascotaId;
         private System.Windows.Forms.DateTimePicker dtFecha;
         private System.Windows.Forms.TextBox txtEstado;
-        private System.Windows.Forms.TextBox txtVeterinario_id;
-        private System.Windows.Forms.TextBox txtMacota_id;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTratamiento;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.ComboBox cbTrtamiento;
+        private System.Windows.Forms.ComboBox cbVeterinario;
+        private System.Windows.Forms.ComboBox cbMascota;
     }
 }

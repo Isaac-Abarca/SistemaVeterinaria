@@ -128,7 +128,6 @@ namespace SistemaVeterinaria.CapaConexion
                     else
                         return false;
                 }
-
             }
             catch (SqlException error)
             {

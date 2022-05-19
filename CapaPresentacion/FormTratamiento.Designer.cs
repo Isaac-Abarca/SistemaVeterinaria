@@ -36,7 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTratamiento_Id = new System.Windows.Forms.TextBox();
-            this.txtMedicamento_id = new System.Windows.Forms.TextBox();
             this.txtTratamiento_dosis = new System.Windows.Forms.TextBox();
             this.txtTratamiento_observaciones = new System.Windows.Forms.TextBox();
             this.btnInsertar = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbMedicamento_id = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagritTratamientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,13 +126,6 @@
             this.txtTratamiento_Id.Size = new System.Drawing.Size(206, 20);
             this.txtTratamiento_Id.TabIndex = 7;
             // 
-            // txtMedicamento_id
-            // 
-            this.txtMedicamento_id.Location = new System.Drawing.Point(171, 133);
-            this.txtMedicamento_id.Name = "txtMedicamento_id";
-            this.txtMedicamento_id.Size = new System.Drawing.Size(206, 20);
-            this.txtMedicamento_id.TabIndex = 8;
-            // 
             // txtTratamiento_dosis
             // 
             this.txtTratamiento_dosis.Location = new System.Drawing.Point(171, 170);
@@ -192,6 +185,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(459, 59);
             this.comboBox1.Name = "comboBox1";
@@ -242,12 +237,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // SistemaVeterinara
+            // cbMedicamento_id
+            // 
+            this.cbMedicamento_id.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbMedicamento_id.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbMedicamento_id.FormattingEnabled = true;
+            this.cbMedicamento_id.Location = new System.Drawing.Point(171, 136);
+            this.cbMedicamento_id.Name = "cbMedicamento_id";
+            this.cbMedicamento_id.Size = new System.Drawing.Size(206, 21);
+            this.cbMedicamento_id.TabIndex = 23;
+            // 
+            // FormTratamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1017, 450);
+            this.Controls.Add(this.cbMedicamento_id);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnEliminar);
@@ -260,7 +266,6 @@
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.txtTratamiento_observaciones);
             this.Controls.Add(this.txtTratamiento_dosis);
-            this.Controls.Add(this.txtMedicamento_id);
             this.Controls.Add(this.txtTratamiento_Id);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -269,7 +274,7 @@
             this.Controls.Add(this.lblTratamiento_dosis);
             this.Controls.Add(this.lblMedicamento_id);
             this.Controls.Add(this.lblTratamiento_Id);
-            this.Name = "SistemaVeterinara";
+            this.Name = "FormTratamiento";
             this.Text = "Sistema Veterinaria";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagritTratamientos)).EndInit();
@@ -288,7 +293,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTratamiento_Id;
-        private System.Windows.Forms.TextBox txtMedicamento_id;
         private System.Windows.Forms.TextBox txtTratamiento_dosis;
         private System.Windows.Forms.TextBox txtTratamiento_observaciones;
         private System.Windows.Forms.Button btnInsertar;
@@ -301,6 +305,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbMedicamento_id;
     }
 }
 

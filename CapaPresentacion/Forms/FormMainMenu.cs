@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,11 +15,15 @@ namespace MultiColoredModerUi
 {
     public partial class FormMainMenu : Form
     {
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
+        private const string Caption = "Warning";
         public FormMainMenu()
         {
             InitializeComponent();
@@ -174,5 +179,38 @@ namespace MultiColoredModerUi
         {
 
         }
+
+        private void btnCerrarSecion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro de cerrar la aplicacion?", Caption,
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) ;
+            this.Close();
+        }
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panelLogo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panelDesktopPanel_Paint(object sender, PaintEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        
     }
 }

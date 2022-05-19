@@ -167,5 +167,10 @@ namespace CapaPresentacion
             desactivar();
             cargarCargarGrid();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            limpiarTxt();
+        }
     }
 }
