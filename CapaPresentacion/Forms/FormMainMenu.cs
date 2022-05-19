@@ -105,6 +105,8 @@ namespace MultiColoredModerUi
 
         private void btnExpediente_Click(object sender, EventArgs e)
         {
+            Console.Write("holaaaaaaaaaaaaaaaaaaaaaa");
+
             openChildForm(new FormExpediente(), sender);
         }
 
@@ -125,7 +127,12 @@ namespace MultiColoredModerUi
 
         private void btnConfiguraciones_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormConfiguraciones(), sender);
+            FormConfiguraciones form = new FormConfiguraciones();
+            if (lblTipoUser.Text != "Administrador")
+            {
+                form.btnActivarUsuarios.Enabled = false;
+            }
+            openChildForm(form, sender);
         }
 
         private void FormMainMenu_Load(object sender, EventArgs e)

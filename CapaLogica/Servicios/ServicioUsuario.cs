@@ -36,13 +36,13 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
             comando.CommandText ="InsertarUsuario";
 
-            comando.Parameters.Add("Usuario_nombre", SqlDbType.Int);
+            comando.Parameters.Add("Usuario_nombre", SqlDbType.VarChar);
             comando.Parameters["Usuario_nombre"].Value = usuario.Usuario_nombre;
 
-            comando.Parameters.Add("Usuario_contrasenna", SqlDbType.Int);
+            comando.Parameters.Add("Usuario_contrasenna", SqlDbType.VarChar);
             comando.Parameters["Usuario_contrasenna"].Value = usuario.Usuario_contrasenna;
 
-            comando.Parameters.Add("Usuario_tipo", SqlDbType.Date);
+            comando.Parameters.Add("Usuario_tipo", SqlDbType.VarChar);
             comando.Parameters["Usuario_tipo"].Value = usuario.Usuario_tipo;
 
             comando.Parameters.Add("Usuario_estado", SqlDbType.VarChar);
@@ -65,13 +65,13 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Usuario_id", SqlDbType.Int);
             comando.Parameters["Usuario_id"].Value = usuario.Usuario_id;
 
-            comando.Parameters.Add("Usuario_nombre", SqlDbType.Int);
+            comando.Parameters.Add("Usuario_nombre", SqlDbType.VarChar);
             comando.Parameters["Usuario_nombre"].Value = usuario.Usuario_nombre;
 
-            comando.Parameters.Add("Usuario_contrasenna", SqlDbType.Int);
+            comando.Parameters.Add("Usuario_contrasenna", SqlDbType.VarChar);
             comando.Parameters["Usuario_contrasenna"].Value = usuario.Usuario_contrasenna;
 
-            comando.Parameters.Add("Usuario_tipo", SqlDbType.Date);
+            comando.Parameters.Add("Usuario_tipo", SqlDbType.VarChar);
             comando.Parameters["Usuario_tipo"].Value = usuario.Usuario_tipo;
 
             comando.Parameters.Add("Usuario_estado", SqlDbType.VarChar);
@@ -123,15 +123,17 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             return Logins(user, pass);
         }
 
-        public string InactivarTratamiento(int id)
+        
+
+        public string inactivarUsuario(int id)
         {
             comando = new SqlCommand();
             Console.WriteLine("GESTOR Inactivar usuario");
 
             comando.CommandText ="InactivarUsuario";
 
-            comando.Parameters.Add("@usuario_id", SqlDbType.Int);
-            comando.Parameters["@usuario_id"].Value = id;
+            comando.Parameters.Add("@Usuario_id", SqlDbType.Int);
+            comando.Parameters["@Usuario_id"].Value = id;
 
             respuesta = this.ejecutaSentencia(comando);
             if (respuesta == "")

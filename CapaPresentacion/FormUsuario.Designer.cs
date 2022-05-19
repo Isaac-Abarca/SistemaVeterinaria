@@ -31,7 +31,7 @@
             this.lbllid = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblIdMedicamento = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGUsuario = new System.Windows.Forms.DataGridView();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -45,7 +45,8 @@
             this.txtContrasenna = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cbTipo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // lbllid
@@ -60,6 +61,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(166, 124);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(123, 20);
@@ -75,17 +77,18 @@
             this.lblIdMedicamento.TabIndex = 72;
             this.lblIdMedicamento.Text = "Contraseña";
             // 
-            // dataGridView1
+            // dataGUsuario
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(342, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(527, 304);
-            this.dataGridView1.TabIndex = 71;
+            this.dataGUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGUsuario.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGUsuario.Location = new System.Drawing.Point(342, 87);
+            this.dataGUsuario.Name = "dataGUsuario";
+            this.dataGUsuario.ReadOnly = true;
+            this.dataGUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGUsuario.Size = new System.Drawing.Size(527, 304);
+            this.dataGUsuario.TabIndex = 71;
+            this.dataGUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGUsuario_CellClick);
             // 
             // btnBusqueda
             // 
@@ -121,6 +124,7 @@
             this.btnEliminar.TabIndex = 67;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -131,6 +135,7 @@
             this.btnModificar.TabIndex = 66;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnInsertar
             // 
@@ -141,6 +146,7 @@
             this.btnInsertar.TabIndex = 65;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // label2
             // 
@@ -174,6 +180,7 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(166, 274);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(123, 20);
@@ -189,7 +196,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(166, 160);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(123, 20);
@@ -203,16 +209,28 @@
             this.cbTipo.Size = new System.Drawing.Size(123, 21);
             this.cbTipo.TabIndex = 77;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.Location = new System.Drawing.Point(146, 364);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 35);
+            this.button1.TabIndex = 78;
+            this.button1.Text = "Limpiar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 492);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.lbllid);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblIdMedicamento);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGUsuario);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.txtBusqueda);
@@ -227,7 +245,8 @@
             this.Controls.Add(this.txtNombre);
             this.Name = "FormUsuario";
             this.Text = "FormUsuario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +257,7 @@
         private System.Windows.Forms.Label lbllid;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblIdMedicamento;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGUsuario;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
@@ -252,5 +271,6 @@
         private System.Windows.Forms.TextBox txtContrasenna;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.Button button1;
     }
 }

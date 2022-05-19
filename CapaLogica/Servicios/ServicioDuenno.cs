@@ -35,11 +35,11 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Duenno_cedula", SqlDbType.VarChar);
             comando.Parameters["Duenno_cedula"].Value = duenno.Duenno_cedula;
 
-            comando.Parameters.Add("Duenno_nombre", SqlDbType.Int);
+            comando.Parameters.Add("Duenno_nombre", SqlDbType.VarChar);
             comando.Parameters["Duenno_nombre"].Value = duenno.Duenno_nombre;
 
-            comando.Parameters.Add("Duenno_apellidos", SqlDbType.Date);
-            comando.Parameters["Duenno_apellidos"].Value = duenno.Duenno_apellidos;
+            comando.Parameters.Add("Duenno_apellido", SqlDbType.VarChar);
+            comando.Parameters["Duenno_apellido"].Value = duenno.Duenno_apellidos;
 
             comando.Parameters.Add("Duenno_telefono", SqlDbType.VarChar);
             comando.Parameters["Duenno_telefono"].Value = duenno.Duenno_telefono;
@@ -70,11 +70,11 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Duenno_cedula", SqlDbType.VarChar);
             comando.Parameters["Duenno_cedula"].Value = duenno.Duenno_cedula;
 
-            comando.Parameters.Add("Duenno_nombre", SqlDbType.Int);
+            comando.Parameters.Add("Duenno_nombre", SqlDbType.VarChar);
             comando.Parameters["Duenno_nombre"].Value = duenno.Duenno_nombre;
 
-            comando.Parameters.Add("Duenno_apellidos", SqlDbType.Date);
-            comando.Parameters["Duenno_apellidos"].Value = duenno.Duenno_apellidos;
+            comando.Parameters.Add("Duenno_apellido", SqlDbType.VarChar);
+            comando.Parameters["Duenno_apellido"].Value = duenno.Duenno_apellidos;
 
             comando.Parameters.Add("Duenno_telefono", SqlDbType.VarChar);
             comando.Parameters["Duenno_telefono"].Value = duenno.Duenno_telefono;
@@ -100,7 +100,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
             comando.CommandText ="ConsultarDuenno";
 
-            comando.Parameters.Add("Duenno_id", SqlDbType.Int);
+            comando.Parameters.Add("@Duenno_id", SqlDbType.Int);
             comando.Parameters["@Duenno_id"].Value = Duenno_id;
 
             DataSet dataSet = new DataSet();
@@ -123,6 +123,24 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             Duenno = this.seleccionarInformacion(comando);
             DataTable miTabla = Duenno.Tables[0];
             return miTabla;
+
+        }
+
+        public string inactivarDuenno(int id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar Duenno");
+
+            comando.CommandText ="InactivarDuenno";
+
+            comando.Parameters.Add("@Duenno_id", SqlDbType.Int);
+            comando.Parameters["@Duenno_id"].Value = id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la inactivacion del Duenno";
+            Console.WriteLine(respuesta);
+            return respuesta;
 
         }
     }

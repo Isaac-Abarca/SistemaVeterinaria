@@ -31,7 +31,7 @@
             this.lbllid = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblIdMedicamento = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGMascota = new System.Windows.Forms.DataGridView();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGMascota)).BeginInit();
             this.SuspendLayout();
             // 
             // lbllid
@@ -68,6 +68,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(163, 57);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(123, 20);
@@ -82,19 +83,19 @@
             this.lblIdMedicamento.Size = new System.Drawing.Size(58, 18);
             this.lblIdMedicamento.TabIndex = 72;
             this.lblIdMedicamento.Text = "Genero";
-            this.lblIdMedicamento.Click += new System.EventHandler(this.lblIdMedicamento_Click);
             // 
-            // dataGridView1
+            // dataGMascota
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(374, 105);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(527, 304);
-            this.dataGridView1.TabIndex = 71;
+            this.dataGMascota.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGMascota.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGMascota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGMascota.Location = new System.Drawing.Point(335, 105);
+            this.dataGMascota.Name = "dataGMascota";
+            this.dataGMascota.ReadOnly = true;
+            this.dataGMascota.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGMascota.Size = new System.Drawing.Size(585, 304);
+            this.dataGMascota.TabIndex = 71;
+            this.dataGMascota.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGMascota_CellClick);
             // 
             // btnBusqueda
             // 
@@ -130,6 +131,7 @@
             this.btnEliminar.TabIndex = 67;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -140,6 +142,7 @@
             this.btnModificar.TabIndex = 66;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnInsertar
             // 
@@ -150,6 +153,7 @@
             this.btnInsertar.TabIndex = 65;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // label2
             // 
@@ -170,7 +174,6 @@
             this.lbldireccion.Size = new System.Drawing.Size(45, 18);
             this.lbldireccion.TabIndex = 63;
             this.lbldireccion.Text = "Color";
-            this.lbldireccion.Click += new System.EventHandler(this.lbldireccion_Click);
             // 
             // lblNombre
             // 
@@ -184,6 +187,7 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.Enabled = false;
             this.txtEstado.Location = new System.Drawing.Point(163, 350);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(123, 20);
@@ -196,7 +200,6 @@
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(123, 20);
             this.txtColor.TabIndex = 60;
-            this.txtColor.TextChanged += new System.EventHandler(this.txtColor_TextChanged);
             // 
             // txtGenero
             // 
@@ -204,11 +207,9 @@
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(123, 20);
             this.txtGenero.TabIndex = 59;
-            this.txtGenero.TextChanged += new System.EventHandler(this.txtGenero_TextChanged);
             // 
             // txtNombre
             // 
-            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(163, 168);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(123, 20);
@@ -289,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(955, 497);
+            this.ClientSize = new System.Drawing.Size(996, 497);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Fecha);
@@ -301,7 +302,7 @@
             this.Controls.Add(this.lbllid);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblIdMedicamento);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGMascota);
             this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.txtBusqueda);
@@ -318,7 +319,7 @@
             this.Name = "FormMascota";
             this.Text = "FormMascota";
             this.Load += new System.EventHandler(this.FormMascota_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGMascota)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,7 +330,7 @@
         private System.Windows.Forms.Label lbllid;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblIdMedicamento;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGMascota;
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;

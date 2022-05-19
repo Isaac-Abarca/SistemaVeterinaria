@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CapaIntegracion
 {
-    internal class GestorDuenno : servicio, IDisposable
+    public class GestorDuenno : servicio, IDisposable
     {
         public GestorDuenno()
         {
@@ -51,6 +51,12 @@ namespace CapaIntegracion
         {
             using (ServicioDuenno Duenno = new ServicioDuenno())
                 return Duenno.modificarDuenno(duenno);
+        }
+
+        public string inactivarDuenno(int duenno)
+        {
+            using (ServicioDuenno Duenno = new ServicioDuenno())
+                return Duenno.inactivarDuenno(duenno);
         }
     }
 }

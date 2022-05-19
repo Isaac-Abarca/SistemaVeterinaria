@@ -33,12 +33,13 @@
             // 
             // btnActivarUsuarios
             // 
-            this.btnActivarUsuarios.Location = new System.Drawing.Point(166, 116);
+            this.btnActivarUsuarios.Location = new System.Drawing.Point(42, 33);
             this.btnActivarUsuarios.Name = "btnActivarUsuarios";
             this.btnActivarUsuarios.Size = new System.Drawing.Size(127, 43);
             this.btnActivarUsuarios.TabIndex = 0;
             this.btnActivarUsuarios.Text = "Activar Usuarios";
             this.btnActivarUsuarios.UseVisualStyleBackColor = true;
+            this.btnActivarUsuarios.Click += new System.EventHandler(this.btnActivarUsuarios_Click);
             // 
             // FormConfiguraciones
             // 
@@ -54,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnActivarUsuarios;
+        public System.Windows.Forms.Button btnActivarUsuarios;
     }
 }

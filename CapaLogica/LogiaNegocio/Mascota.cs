@@ -17,7 +17,7 @@ namespace CapaLogica.LogiaNegocio
         protected string mascota_nombre;
         protected string mascota_genero;
         protected string mascota_color;
-        protected Date   mascota_fecha_nacimiento;
+        protected string   mascota_fecha_nacimiento;
         protected float  mascota_peso;
         protected string   mascota_estado;
 
@@ -25,7 +25,7 @@ namespace CapaLogica.LogiaNegocio
 
         #region Constructores
         public Mascota(int mascota_id, int especie_id, int duenno_id, string mascota_nombre,
-           string mascota_genero, string mascota_color, Date mascota_fecha_nacimiento, float mascota_peso, string mascota_estado)
+           string mascota_genero, string mascota_color, string mascota_fecha_nacimiento, float mascota_peso, string mascota_estado)
         {
             this.mascota_id=mascota_id;
             this.especie_id=especie_id;
@@ -39,7 +39,7 @@ namespace CapaLogica.LogiaNegocio
         }
 
         public Mascota(int especie_id, int duenno_id, string mascota_nombre,
-           string mascota_genero, string mascota_color, Date mascota_fecha_nacimiento, float mascota_peso, string mascota_estado)
+           string mascota_genero, string mascota_color, string mascota_fecha_nacimiento, float mascota_peso, string mascota_estado)
         {
             this.especie_id=especie_id;
             this.duenno_id=duenno_id;
@@ -60,7 +60,7 @@ namespace CapaLogica.LogiaNegocio
         public string Mascota_nombre { get => mascota_nombre; set => mascota_nombre=value; }
         public string Mascota_genero { get => mascota_genero; set => mascota_genero=value; }
         public string Mascota_color { get => mascota_color; set => mascota_color=value; }
-        public Date Mascota_fecha_nacimiento { get => mascota_fecha_nacimiento; set => mascota_fecha_nacimiento=value; }
+        public string Mascota_fecha_nacimiento { get => mascota_fecha_nacimiento; set => mascota_fecha_nacimiento=value; }
         public float Mascota_peso { get => mascota_peso; set => mascota_peso=value; }
         public string Mascota_estado { get => mascota_estado; set => mascota_estado=value; }
         #endregion

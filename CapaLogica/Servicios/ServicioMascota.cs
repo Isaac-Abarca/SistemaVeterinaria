@@ -53,8 +53,8 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Mascota_peso", SqlDbType.Float);
             comando.Parameters["Mascota_peso"].Value = mascota.Mascota_peso;
 
-            comando.Parameters.Add("Mascota_peso", SqlDbType.VarChar);
-            comando.Parameters["Mascota_peso"].Value = mascota.Mascota_estado;
+            comando.Parameters.Add("Mascota_estado", SqlDbType.VarChar);
+            comando.Parameters["Mascota_estado"].Value = mascota.Mascota_estado;
 
             respuesta = this.ejecutaSentencia(comando);
             if (respuesta == "")
@@ -95,8 +95,8 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             comando.Parameters.Add("Mascota_peso", SqlDbType.Float);
             comando.Parameters["Mascota_peso"].Value = mascota.Mascota_peso;
 
-            comando.Parameters.Add("Mascota_peso", SqlDbType.VarChar);
-            comando.Parameters["Mascota_peso"].Value = mascota.Mascota_estado;
+            comando.Parameters.Add("Mascota_estado", SqlDbType.VarChar);
+            comando.Parameters["Mascota_estado"].Value = mascota.Mascota_estado;
 
 
             respuesta = this.ejecutaSentencia(comando);
@@ -114,7 +114,7 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
 
             comando.CommandText ="ConsultarMascota";
 
-            comando.Parameters.Add("Mascota_id", SqlDbType.Int);
+            comando.Parameters.Add("@Mascota_id", SqlDbType.Int);
             comando.Parameters["@Mascota_id"].Value = Mascota_id;
 
             DataSet dataSet = new DataSet();
@@ -138,6 +138,24 @@ namespace SistemaVeterinaria.CapaLogica.Servicios
             DataTable miTabla = Mascota.Tables[0];
             return miTabla;
 
+        }
+
+        public string inactivarMascota(int id)
+        {
+            comando = new SqlCommand();
+            Console.WriteLine("GESTOR Inactivar Mascota");
+
+            comando.CommandText ="InactivarMascota";
+
+            comando.Parameters.Add("@Mascota_id", SqlDbType.Int);
+            comando.Parameters["@Mascota_id"].Value = id;
+
+            respuesta = this.ejecutaSentencia(comando);
+            if (respuesta == "")
+                respuesta += "Se a realizado correctamente la MODIFICACION usuario";
+            Console.WriteLine(respuesta);
+
+            return respuesta;
         }
     }
 }

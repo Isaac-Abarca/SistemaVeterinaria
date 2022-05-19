@@ -43,7 +43,7 @@ namespace CapaIntegracion
                 return Medicamento.ConsultarMedicamento(Usuario_id);
         }
 
-        public string modificarMascota(Usuario usuario)
+        public string modificarUsuario(Usuario usuario)
         {
             using (ServicioUsuario Usuario = new ServicioUsuario())
                 return Usuario.modificarUsuario(usuario);
@@ -53,6 +53,12 @@ namespace CapaIntegracion
         {
             using (ServicioUsuario Usuario = new ServicioUsuario())
                 return Usuario.Login(user, pass);
+        }
+
+        public string inactivarUsuario(int id)
+        {
+            using (ServicioUsuario Usuario = new ServicioUsuario())
+                return Usuario.inactivarUsuario(id);
         }
     }
 }

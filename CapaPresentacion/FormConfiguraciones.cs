@@ -16,5 +16,10 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnActivarUsuarios_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hola si funciona");
+        }
     }
 }

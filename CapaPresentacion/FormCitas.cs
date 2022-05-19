@@ -104,6 +104,7 @@ namespace CapaPresentacion
 
                 dtCita.DataSource = cita.listarCita();
                 dtCita.Columns["Cita_estado"].Visible = false;
+                this.dtCita.Columns["Cita_fecha"].DefaultCellStyle.Format = "yyyy-MM-dd";
             }
 
         }

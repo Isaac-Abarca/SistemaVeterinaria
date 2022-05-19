@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CapaIntegracion
 {
-    internal class GestorMascota : servicio, IDisposable
+    public class GestorMascota : servicio, IDisposable
     {
         public GestorMascota()
         {
@@ -26,7 +26,7 @@ namespace CapaIntegracion
                                        string mascota_nombre,
                                        string mascota_genero,
                                        string mascota_color,
-                                       Date mascota_fecha_nacimiento,
+                                       string mascota_fecha_nacimiento,
                                        float mascota_peso,
                                        string mascota_estado)
         {
@@ -53,6 +53,12 @@ namespace CapaIntegracion
         {
             using (ServicioMascota mascota = new ServicioMascota())
                 return mascota.modificarMascota(Mascota);
+        }
+
+        public string inactivarMascota(int id)
+        {
+            using (ServicioMascota mascota = new ServicioMascota())
+                return mascota.inactivarMascota(id);
         }
     }
 }
